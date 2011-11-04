@@ -2,21 +2,13 @@ package com.objet.lofteurs;
 
 public class Saison1 {
 
-<<<<<<< HEAD
 	public static final int nombreLofteurs = 4;
-	public static final int tailleLoft = 30;
 	public static final float proportionErratique = .75f;
 	public static final float proportionVorace = .25f;
 	public static final float proportionCannibale = 0f;
 	public static final int energieDefault = 100;
-=======
-	public static int nombreLofteurs = 4;
-	public static int longueurLoft = 30;
-	public static int largeurLoft = 25;
-	public static float proportionErratique = .75f;
-	public static float proportionVorace = .25f;
-	public static float proportionCannibale = 0f;
->>>>>>> cd0d1e122927b85e553226bc11bb2557732a1a22
+	public static final int longueurLoft = 30;
+	public static final int largeurLoft = 25;
 	/**
 	 * @param args
 	 */
