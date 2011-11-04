@@ -1,5 +1,7 @@
 package com.objet.lofteurs;
 
+import com.objet.lofteurs.neuneus.Neuneu;
+
 public class Loft {
 
 	private final int w;
