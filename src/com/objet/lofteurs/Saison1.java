@@ -1,5 +1,14 @@
 package com.objet.lofteurs;
 
+import com.objet.lofteurs.neuneus.Cannibale;
+import com.objet.lofteurs.neuneus.Erratique;
+import com.objet.lofteurs.neuneus.Vorace;
+
+/**
+ * 
+ * @author Denis Bastien
+ *
+ */
 public class Saison1 {
 
 	public static final int nombreLofteurs = 4;
