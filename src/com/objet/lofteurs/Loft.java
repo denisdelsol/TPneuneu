@@ -14,6 +14,7 @@ public class Loft implements ObjetDessinable {
 	private final int w;
 	private final int h;
 	private final ZoneGraphique zone;
+	private Case[][] listeCases;
 
 	/**
 	 * 
@@ -27,12 +28,20 @@ public class Loft implements ObjetDessinable {
 		this.w = w;
 		this.h = h;
 		this.zone = zone;
+		this.listeCases = new Case[h][w];
 
 		for (int i = 0; i < w; i++) {
 			for (int j = 0; j < h; j++) {
-				// TODO Créer une case
+				this.listeCases[i][j] = new Case(i, j);
 			}
 		}
+	}
+
+	/**
+	 * Lance l'émission !
+	 */
+	public void go() {
+		// TODO
 	}
 
 	/**
@@ -49,7 +58,10 @@ public class Loft implements ObjetDessinable {
 	 * @param neuneu
 	 */
 	public void add(Neuneu neuneu) {
-		//TODO
+		int positionX = (int)(Math.random()*w);
+		int positionY = (int)(Math.random()*h);
+		
+		//listeCases[positionX][positionY]
 	}
 
 	@Override

@@ -45,5 +45,12 @@ public class Case {
 		return this.listeNeuneus;
 	}
 	
+	/**
+	 * 
+	 * @param neuneu
+	 */
+	public void addNeuneu(Neuneu neuneu){
+		
+	}
 	
 }
