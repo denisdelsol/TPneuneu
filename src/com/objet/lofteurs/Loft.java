@@ -36,13 +36,6 @@ public class Loft implements ObjetDessinable {
 	}
 
 	/**
-	 * Lance l'émission !
-	 */
-	public void go() {
-		// TODO
-	}
-
-	/**
 	 * Remplit le loft en nourriture
 	 * 
 	 * @param nombre
@@ -51,8 +44,12 @@ public class Loft implements ObjetDessinable {
 		// TODO
 	}
 
+	/**
+	 * Ajoute un neuneu au loft.
+	 * @param neuneu
+	 */
 	public void add(Neuneu neuneu) {
-
+		//TODO
 	}
 
 	@Override
