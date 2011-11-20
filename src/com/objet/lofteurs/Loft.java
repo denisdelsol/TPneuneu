@@ -33,6 +33,7 @@ public class Loft implements ObjetDessinable {
 		this.h = h;
 		this.zone = zone;
 		this.listeCases = new Case[w][h];
+		listeNeuneu = new ArrayList<Neuneu>();
 
 		for (int i = 0; i < w; i++) {
 			for (int j = 0; j < h; j++) {
@@ -82,6 +83,7 @@ public class Loft implements ObjetDessinable {
 	 */
 	public void add(Neuneu neuneu) {
 		listeNeuneu.add(neuneu);
+		zone.ajouterObjet(neuneu);
 	}
 
 	/**
@@ -97,6 +99,15 @@ public class Loft implements ObjetDessinable {
 	public void dessinerObjet(Graphics g) {
 		// TODO Auto-generated method stub
 
+	}
+
+	/**
+	 * Renvoie la liste des neuneus du loft
+	 * 
+	 * @return ArrayList<Neuneu>
+	 */
+	public ArrayList<Neuneu> getListeNeuneus() {
+		return listeNeuneu;
 	}
 
 	/**
