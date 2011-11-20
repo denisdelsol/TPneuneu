@@ -6,8 +6,9 @@ import com.objet.lofteurs.neuneus.Neuneu;
 
 /**
  * Classe correspondant au Loft
+ * 
  * @author Denis
- *
+ * 
  */
 public class Loft implements ObjetDessinable {
 
@@ -54,20 +55,32 @@ public class Loft implements ObjetDessinable {
 	}
 
 	/**
-	 * Ajoute un neuneu au loft.
+	 * Ajoute un neuneu au loft aléatoirement.
+	 * 
 	 * @param neuneu
 	 */
 	public void add(Neuneu neuneu) {
-		int positionX = (int)(Math.random()*w);
-		int positionY = (int)(Math.random()*h);
-		
-		//listeCases[positionX][positionY]
+		int positionX = (int) (Math.random() * w);
+		int positionY = (int) (Math.random() * h);
+
+		add(neuneu, positionX, positionY);
+	}
+
+	/**
+	 * Ajoute un neuneu au loft dans une case particulière.
+	 * 
+	 * @param neuneu
+	 * @param positionX
+	 * @param positionY
+	 */
+	public void add(Neuneu neuneu, int positionX, int positionY) {
+		listeCases[positionX][positionY].addNeuneu(neuneu);
 	}
 
 	@Override
 	public void dessinerObjet(Graphics g) {
 		// TODO Auto-generated method stub
-		
+
 	}
 	
 	/**
