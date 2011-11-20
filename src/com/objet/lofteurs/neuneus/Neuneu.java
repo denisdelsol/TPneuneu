@@ -14,10 +14,6 @@ import com.objet.lofteurs.Saison1;
  */
 public abstract class Neuneu implements Mangeable {
 	/**
-	 * Represente le nom du Neuneu
-	 */
-	protected final String name;
-	/**
 	 * Represnete l'energie du Neuneu
 	 */
 	protected int energie = Saison1.energieDefault;
@@ -37,8 +33,7 @@ public abstract class Neuneu implements Mangeable {
 	 * @param caseDepart - La case de départ du Neuneu
 	 * @param loft - Le loft dans lequel se trouve le Neuneu
 	 */
-	public Neuneu(String name, Case caseDepart, Loft loft) {
-		this.name = name;
+	public Neuneu(Case caseDepart, Loft loft) {
 		this.caseCourrante = caseDepart;
 		this.caseCourrante.addNeuneu(this);
 		this.loft = loft;
