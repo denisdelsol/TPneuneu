@@ -14,6 +14,7 @@ public class Lapin extends Erratique {
 	public void seDeplacer(){
 		Case caseArrivee = this.trouverPlusProcheNeuneu();
 		if(caseArrivee != null){
+			this.caseCourrante.removeNeuneu(this);
 			this.caseCourrante = caseArrivee;
 			this.caseCourrante.addNeuneu(this);
 			return;
@@ -21,6 +22,7 @@ public class Lapin extends Erratique {
 		
 		caseArrivee = this.trouverPlusProcheNourriture();
 		if(caseArrivee != null){
+			this.caseCourrante.removeNeuneu(this);
 			this.caseCourrante = caseArrivee;
 			this.caseCourrante.addNeuneu(this);
 			return;
