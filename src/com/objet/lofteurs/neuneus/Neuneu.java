@@ -6,14 +6,34 @@ import com.objet.lofteurs.Loft;
 import com.objet.lofteurs.Mangeable;
 import com.objet.lofteurs.Saison1;
 
+/**
+ * Represente un Neuneu quelconque
+ * 
+ * @author bastien
+ *
+ */
 public abstract class Neuneu implements Mangeable {
-	protected final String name;
+	/**
+	 * Represnete l'energie du Neuneu
+	 */
 	protected int energie = Saison1.energieDefault;
+	/**
+	 * Represente le loft dans lequel evolue le neuneu
+	 */
 	protected final Loft loft;
+	/**
+	 * Represente la case sur laquelle se trouve le Neuneu a un moment donne
+	 */
 	protected Case caseCourrante;
 
-	public Neuneu(String name, Case caseDepart, Loft loft) {
-		this.name = name;
+	/**
+	 * Constructeur d'un Neuneu
+	 * 
+	 * @param name - Le nom du Neuneu
+	 * @param caseDepart - La case de départ du Neuneu
+	 * @param loft - Le loft dans lequel se trouve le Neuneu
+	 */
+	public Neuneu(Case caseDepart, Loft loft) {
 		this.caseCourrante = caseDepart;
 		this.caseCourrante.addNeuneu(this);
 		this.loft = loft;
@@ -21,8 +41,18 @@ public abstract class Neuneu implements Mangeable {
 
 	}
 
-	public abstract Case seDeplacer();
+	/**
+	 * Permet au Neuneu de se deplacer dans le loft
+	 * 
+	 * @return La case d'arrivee du Neuneu
+	 */
+	public abstract void seDeplacer();
 
+	/**
+	 * Permet de savoir si le Neuneu est mort
+	 * 
+	 * @return Vrai si le Neuneu est mort, Faux sinon
+	 */
 	public boolean estMort() {
 		if (this.energie == Saison1.energieMort) {
 			return true;
@@ -31,6 +61,9 @@ public abstract class Neuneu implements Mangeable {
 		}
 	}
 
+	/**
+	 * Permet au Neuneu de manger, ceci lui fait gagner de l'energie 
+	 */
 	public void manger() {
 		final int nbNourriture = caseCourrante.getNourriture().size();
 
@@ -48,6 +81,9 @@ public abstract class Neuneu implements Mangeable {
 		}
 	}
 
+	/**
+	 * Permet au Neuneu de se reproduire, ceci lui fait perdre de l'energie
+	 */
 	public void seReproduire() {
 		final int nbNeuneu = caseCourrante.getNeuneu().size();
 
@@ -62,10 +98,17 @@ public abstract class Neuneu implements Mangeable {
 		}
 	}
 
+	/**
+	 * Permet au Neuneu d'être mange 
+	 * 
+	 * @return La quantite d'energie cede par le Neuneu
+	 */
 	public int estMange() {
 		final int quantiteNourriture = (int) (Math.random() * this.energie);
 		this.energie = Saison1.energieMort;
 		return quantiteNourriture;
 	}
+	
+	
 
 }

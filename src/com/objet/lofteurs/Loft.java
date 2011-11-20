@@ -42,7 +42,7 @@ public class Loft implements ObjetDessinable {
 	}
 
 	/**
-	 * Lance l'émission !
+	 * Lance l'ï¿½mission !
 	 */
 	public void go() {
 		// TODO
@@ -70,5 +70,16 @@ public class Loft implements ObjetDessinable {
 	public void dessinerObjet(Graphics g) {
 		// TODO Auto-generated method stub
 
+	}
+	
+	/**
+	 * Permet de recuperer une case du loft
+	 * 
+	 * @param coordX - coordonnee selon X de la case
+	 * @param coordY - coordonnee selon Y de la case
+	 * @return La case du loft demandee
+	 */
+	public Case getCase(int coordX, int coordY){
+		return this.listeCases[coordX][coordY];
 	}
 }

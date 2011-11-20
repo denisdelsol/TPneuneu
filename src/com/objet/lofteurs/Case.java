@@ -1,13 +1,12 @@
 package com.objet.lofteurs;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import com.lofteur.nourriture.Nourriture;
 import com.objet.lofteurs.neuneus.Neuneu;
 
 /**
- * Classe représentant une case du loft.
+ * Classe reprï¿½sentant une case du loft.
  * 
  * @author Denis
  */
@@ -15,7 +14,7 @@ public class Case {
 
 	private final int x;
 	private final int y;
-	private Map<Integer, Nourriture> listeNourriture;
+	private Map<Integer, Nourriture> listeNourriture; 
 	private Map<Integer, Neuneu> listeNeuneus;
 
 	/**
@@ -31,7 +30,8 @@ public class Case {
 	
 	/**
 	 * Obtient la valeur de x.
-	 * @return
+	 * 
+	 * @return x
 	 */
 	public int getX() {
 		return x;
@@ -39,14 +39,15 @@ public class Case {
 
 	/**
 	 * Obtient la valeur de y.
-	 * @return
+	 * 
+	 * @return the y
 	 */
 	public int getY() {
 		return y;
 	}
 	
 	/**
-	 * Obtient une liste de nourriture présents sur la case.
+	 * Obtient une liste de nourriture presentes sur la case.
 	 * 
 	 * @return Map<Integer, Nourriture>
 	 */
@@ -64,7 +65,7 @@ public class Case {
 	}
 
 	/**
-	 * Ajoute un neuneu à la case
+	 * Ajoute un neuneu ï¿½ la case
 	 * 
 	 * @param neuneu
 	 */
@@ -73,7 +74,7 @@ public class Case {
 	}
 
 	/**
-	 * Ajoute un élément de nourriture à la case.
+	 * Ajoute un element de nourriture a la case.
 	 * 
 	 * @param nourriture
 	 */
@@ -82,7 +83,7 @@ public class Case {
 	}
 
 	/**
-	 * Enlève un neuneu d'une case.
+	 * Enleve un neuneu d'une case.
 	 * 
 	 * @param neuneu
 	 */

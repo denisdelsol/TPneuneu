@@ -10,9 +10,9 @@ public class Cannibale extends Vorace {
 	}
 	
 	@Override
-	public Case seDeplacer(){
+	public void seDeplacer(){
 		// TODO implémenter la méthode
-		return new Case(0,0);
+		return;
 	}
 
 }
