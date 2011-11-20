@@ -16,6 +16,8 @@ public class Saison1 {
 	public static final float proportionVorace = .25f;
 	public static final float proportionCannibale = 0f;
 	public static final int energieDefault = 100;
+	public static final int energieReproduction = 25;
+	public static final int energieMort = 0;
 	public static final int longueurLoft = 30;
 	public static final int largeurLoft = 25;
 	/**
