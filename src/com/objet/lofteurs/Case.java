@@ -1,5 +1,6 @@
 package com.objet.lofteurs;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 import com.lofteur.nourriture.Nourriture;
@@ -14,8 +15,8 @@ public class Case {
 
 	private final int x;
 	private final int y;
-	private Map<Integer, Nourriture> listeNourriture; 
-	private Map<Integer, Neuneu> listeNeuneus;
+	private ArrayList<Nourriture> listeNourriture;
+	private ArrayList<Neuneu> listeNeuneus;
 
 	/**
 	 * Instancie une nouvelle instance de la classe Case.
@@ -27,7 +28,7 @@ public class Case {
 		this.x = x;
 		this.y = y;
 	}
-	
+
 	/**
 	 * Obtient la valeur de x.
 	 * 
@@ -45,13 +46,13 @@ public class Case {
 	public int getY() {
 		return y;
 	}
-	
+
 	/**
 	 * Obtient une liste de nourriture presentes sur la case.
 	 * 
 	 * @return Map<Integer, Nourriture>
 	 */
-	public Map<Integer, Nourriture> getNourriture() {
+	public ArrayList<Nourriture> getNourriture() {
 		return this.listeNourriture;
 	}
 
@@ -60,7 +61,7 @@ public class Case {
 	 * 
 	 * @return Map<Integer, Neuneu>
 	 */
-	public Map<Integer, Neuneu> getNeuneu() {
+	public ArrayList<Neuneu> getNeuneu() {
 		return this.listeNeuneus;
 	}
 
@@ -70,7 +71,7 @@ public class Case {
 	 * @param neuneu
 	 */
 	public void addNeuneu(Neuneu neuneu) {
-		listeNeuneus.put(listeNeuneus.size(), neuneu);
+		listeNeuneus.add(neuneu);
 	}
 
 	/**
@@ -79,7 +80,7 @@ public class Case {
 	 * @param nourriture
 	 */
 	public void addNourriture(Nourriture nourriture) {
-		listeNourriture.put(listeNourriture.size(), nourriture);
+		listeNourriture.add(nourriture);
 	}
 
 	/**
@@ -88,15 +89,7 @@ public class Case {
 	 * @param neuneu
 	 */
 	public void removeNeuneu(Neuneu neuneu) {
-		int key = -1, i = 0;
-		while (key < 0 && i < listeNeuneus.size()) {
-			if (listeNeuneus.get(i) == neuneu) {
-				key = i;
-			}
-			i++;
-		}
-		if (key >= 0) {
-			listeNeuneus.remove(key);
-		}
+
+		listeNeuneus.remove(neuneu);
 	}
 }
