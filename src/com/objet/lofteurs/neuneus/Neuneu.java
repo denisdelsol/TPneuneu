@@ -112,6 +112,11 @@ public abstract class Neuneu implements Mangeable {
 		return quantiteNourriture;
 	}
 
+	/**
+	 * Permet de trouver la case la plus proche avec un Neuneu dessus
+	 * 
+	 * @return La case trouver ou null si aucune case trouvée
+	 */
 	protected Case trouverPlusProcheNeuneu() {
 		boolean neuneuTrouve = false;
 		final int coordX = this.caseCourrante.getX();
@@ -138,6 +143,11 @@ public abstract class Neuneu implements Mangeable {
 		return null;
 	}
 	
+	/**
+	 * Permet de trouver la case la plus proche avec de la nourriture dessus
+	 * 
+	 * @return La case trouver ou null si aucune case trouvée
+	 */
 	protected Case trouverPlusProcheNourriture() {
 		boolean nourritureTrouve = false;
 		final int coordX = this.caseCourrante.getX();
