@@ -1,7 +1,6 @@
 package com.objet.lofteurs;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 import com.lofteur.nourriture.Nourriture;
 import com.objet.lofteurs.neuneus.Neuneu;
