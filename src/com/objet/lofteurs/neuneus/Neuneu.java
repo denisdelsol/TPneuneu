@@ -47,10 +47,13 @@ public abstract class Neuneu implements Mangeable {
 	/**
 	 * Permet au Neuneu de se deplacer dans le loft
 	 * 
-	 * @return La case d'arrivee du Neuneu
 	 */
 	public abstract void seDeplacer();
 	
+	/**
+	 * Permet au Neuneu de se reproduire
+	 * 
+	 */
 	public abstract void seReproduire();
 
 	/**
@@ -114,6 +117,8 @@ public abstract class Neuneu implements Mangeable {
 		return quantiteNourriture;
 	}
 
+
+	
 	/**
 	 * Permet de trouver la case la plus proche avec un Neuneu dessus
 	 * 
