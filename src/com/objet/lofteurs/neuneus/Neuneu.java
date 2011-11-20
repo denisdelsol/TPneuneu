@@ -32,31 +32,32 @@ public abstract class Neuneu implements Mangeable {
 					indexNourriture);
 			final int quantiteEnergie = nourriture.estMange();
 
-			if ((energie + quantiteEnergie) < Saison1.energieDefault) {
-				energie = energie + quantiteEnergie;
+			if ((this.energie + quantiteEnergie) < Saison1.energieDefault) {
+				this.energie = this.energie + quantiteEnergie;
 			} else {
-				energie = Saison1.energieDefault;
+				this.energie = Saison1.energieDefault;
 			}
 		}
 	}
 
-	public void sereproduire() {
+	public void seReproduire() {
 		final int nbNeuneu = caseCourrante.getNeuneu().size();
 		
 		if (nbNeuneu != 0){
-			if ((energie - Saison1.energieReproduction) <= Saison1.energieMort){
-				energie = Saison1.energieMort;
+			if ((this.energie - Saison1.energieReproduction) <= Saison1.energieMort){
+				this.energie = Saison1.energieMort;
 			}
 			
 			else{
-				energie = energie - Saison1.energieReproduction;	
+				this.energie = this.energie - Saison1.energieReproduction;	
 			}	
 		}
 	}
 
 	public int estMange() {
-		// TODO
-		return (Integer) null;
+		final int quantiteNourriture = (int) (Math.random() * this.energie);
+		this.energie = Saison1.energieMort;
+		return quantiteNourriture;
 	}
 
 }
