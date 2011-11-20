@@ -10,7 +10,7 @@ import com.objet.lofteurs.Saison1;
  * Represente un Neuneu quelconque
  * 
  * @author bastien
- *
+ * 
  */
 public abstract class Neuneu implements Mangeable {
 	/**
@@ -29,9 +29,12 @@ public abstract class Neuneu implements Mangeable {
 	/**
 	 * Constructeur d'un Neuneu
 	 * 
-	 * @param name - Le nom du Neuneu
-	 * @param caseDepart - La case de départ du Neuneu
-	 * @param loft - Le loft dans lequel se trouve le Neuneu
+	 * @param name
+	 *            - Le nom du Neuneu
+	 * @param caseDepart
+	 *            - La case de départ du Neuneu
+	 * @param loft
+	 *            - Le loft dans lequel se trouve le Neuneu
 	 */
 	public Neuneu(Case caseDepart, Loft loft) {
 		this.caseCourrante = caseDepart;
@@ -47,6 +50,8 @@ public abstract class Neuneu implements Mangeable {
 	 * @return La case d'arrivee du Neuneu
 	 */
 	public abstract void seDeplacer();
+	
+	public abstract void seReproduire();
 
 	/**
 	 * Permet de savoir si le Neuneu est mort
@@ -62,7 +67,7 @@ public abstract class Neuneu implements Mangeable {
 	}
 
 	/**
-	 * Permet au Neuneu de manger, ceci lui fait gagner de l'energie 
+	 * Permet au Neuneu de manger, ceci lui fait gagner de l'energie
 	 */
 	public void manger() {
 		final int nbNourriture = caseCourrante.getNourriture().size();
@@ -82,9 +87,9 @@ public abstract class Neuneu implements Mangeable {
 	}
 
 	/**
-	 * Permet au Neuneu de se reproduire, ceci lui fait perdre de l'energie
+	 * Permet au Neuneu de copuler, ceci lui fait perdre de l'energie
 	 */
-	public void seReproduire() {
+	public void copuler() {
 		final int nbNeuneu = caseCourrante.getNeuneu().size();
 
 		if (nbNeuneu != 0) {
@@ -99,7 +104,7 @@ public abstract class Neuneu implements Mangeable {
 	}
 
 	/**
-	 * Permet au Neuneu d'être mange 
+	 * Permet au Neuneu d'être mange
 	 * 
 	 * @return La quantite d'energie cede par le Neuneu
 	 */
@@ -108,7 +113,66 @@ public abstract class Neuneu implements Mangeable {
 		this.energie = Saison1.energieMort;
 		return quantiteNourriture;
 	}
+
+	/**
+	 * Permet de trouver la case la plus proche avec un Neuneu dessus
+	 * 
+	 * @return La case trouver ou null si aucune case trouvée
+	 */
+	protected Case trouverPlusProcheNeuneu() {
+		boolean neuneuTrouve = false;
+		final int coordX = this.caseCourrante.getX();
+		final int coordY = this.caseCourrante.getY();
+		int i = 0;
+
+		while (!neuneuTrouve) {
+			for (int x = -i; x <= i; x++) {
+				for (int y = -i; y <= i; y++) {
+					if (this.loft.caseExiste(x, y)) {
+						if (!this.loft.getCase(x, y).getNeuneu().isEmpty()){
+							return this.loft.getCase(x, y);
+						}
+					}
+				}
+			}
+			i++;
+			if (i > Math.max(Math.max((Saison1.largeurLoft - coordX), coordX),
+					Math.max((Saison1.longueurLoft - coordY), coordY))) {
+				return null;
+			}
+		}
+		
+		return null;
+	}
 	
-	
+	/**
+	 * Permet de trouver la case la plus proche avec de la nourriture dessus
+	 * 
+	 * @return La case trouver ou null si aucune case trouvée
+	 */
+	protected Case trouverPlusProcheNourriture() {
+		boolean nourritureTrouve = false;
+		final int coordX = this.caseCourrante.getX();
+		final int coordY = this.caseCourrante.getY();
+		int i = 0;
+
+		while (!nourritureTrouve) {
+			for (int x = -i; x <= i; x++) {
+				for (int y = -i; y <= i; y++) {
+					if (this.loft.caseExiste(x, y)) {
+						if (!this.loft.getCase(x, y).getNourriture().isEmpty()){
+							return this.loft.getCase(x, y);
+						}
+					}
+				}
+			}
+			i++;
+			if (i > Math.max(Math.max((Saison1.largeurLoft - coordX), coordX),
+					Math.max((Saison1.longueurLoft - coordY), coordY))) {
+				return null;
+			}
+		}
+		return null;
+	}
 
 }

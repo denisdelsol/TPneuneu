@@ -20,7 +20,7 @@ public class Loft implements ObjetDessinable {
 	private Map<Integer, Neuneu> listeNeuneu;
 
 	/**
-	 * Crée un loft avec le nombre de cases nécessaires.
+	 * Crï¿½e un loft avec le nombre de cases nï¿½cessaires.
 	 * 
 	 * @param w
 	 *            largeur du loft
@@ -32,7 +32,7 @@ public class Loft implements ObjetDessinable {
 		this.w = w;
 		this.h = h;
 		this.zone = zone;
-		this.listeCases = new Case[h][w];
+		this.listeCases = new Case[w][h];
 
 		for (int i = 0; i < w; i++) {
 			for (int j = 0; j < h; j++) {
@@ -58,7 +58,7 @@ public class Loft implements ObjetDessinable {
 	}
 
 	/**
-	 * Ajoute un neuneu à la liste des neuneus du loft.
+	 * Ajoute un neuneu ï¿½ la liste des neuneus du loft.
 	 * 
 	 * @param neuneu
 	 */
@@ -81,5 +81,19 @@ public class Loft implements ObjetDessinable {
 	 */
 	public Case getCase(int coordX, int coordY){
 		return this.listeCases[coordX][coordY];
+	}
+	
+	/**
+	 * Permet de savoir si une case existe dans le loft
+	 * 
+	 * @param coordX - la coordonnÃ©e selon x
+	 * @param coordY - la coordonnÃ©e selon y
+	 * @return vrai si la case existe, faux sinon
+	 */
+	public boolean caseExiste(int coordX, int coordY){
+		if (0 <= coordX && coordX < this.w && 0 <= coordY && coordY < this.h){
+			return true;
+		}
+		return false;
 	}
 }
