@@ -28,7 +28,23 @@ public class Case {
 		this.x = x;
 		this.y = y;
 	}
+	
+	/**
+	 * Obtient la valeur de x.
+	 * @return
+	 */
+	public int getX() {
+		return x;
+	}
 
+	/**
+	 * Obtient la valeur de y.
+	 * @return
+	 */
+	public int getY() {
+		return y;
+	}
+	
 	/**
 	 * Obtient une liste de nourriture présents sur la case.
 	 * 
