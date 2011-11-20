@@ -9,13 +9,18 @@ public class Cannibale extends Vorace {
 	public Cannibale(Case caseCourrante, Loft loft) {
 		super(caseCourrante, loft);
 	}
-	
+
 	@Override
-	public void seDeplacer(){
-		// TODO implémenter la méthode
+	public void seDeplacer() {
+		final Case caseArrivee = this.trouverPlusProcheNourritureNeuneu();
+		if (caseArrivee != null) {
+			this.caseCourrante = caseArrivee;
+			this.caseCourrante.addNeuneu(this);
+			return;
+		}
 		return;
 	}
-	
+
 	@Override
 	public void seReproduire() {
 		super.copuler();
