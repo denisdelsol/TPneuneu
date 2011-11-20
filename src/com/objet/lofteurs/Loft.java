@@ -42,6 +42,24 @@ public class Loft implements ObjetDessinable {
 	}
 
 	/**
+	 * Obtient w.
+	 * 
+	 * @return
+	 */
+	public int getW() {
+		return w;
+	}
+
+	/**
+	 * Obtient h.
+	 * 
+	 * @return
+	 */
+	public int getH() {
+		return h;
+	}
+
+	/**
 	 * Lance l'emission !
 	 */
 	public void go() {
@@ -64,6 +82,7 @@ public class Loft implements ObjetDessinable {
 	 */
 	public void add(Neuneu neuneu) {
 		listeNeuneu.add(neuneu);
+		//listeCases[]
 	}
 
 	/**

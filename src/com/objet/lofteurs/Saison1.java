@@ -36,22 +36,17 @@ public class Saison1 {
 		for (int i=0 ; i<nombreLofteurs ; i++) {
 			double x = Math.random();
 			if (x<proportionVorace) {
-				//loft.add(new Vorace(i, , loft);
+				loft.add(new Vorace(String.valueOf(i), loft.getCase((int)(Math.random()*loft.getH()), (int)(Math.random()*loft.getW())) , loft));
 			}
 			else {
 				x -= proportionVorace;
 				if (x<proportionErratique) {
-					/*loft.add(new Erratique(loft,
-							(int)(Math.random()*29),
-							(int)(Math.random()*29)));*/
+					loft.add(new Erratique(loft.getCase((int)(Math.random()*loft.getH()), (int)(Math.random()*loft.getW())) , loft));
 				}
 				else {
 					x -= proportionErratique;
 					if (x<proportionCannibale) {
-						/*loft.add(new Cannibale(loft,
-						(int)(Math.random()*29),
-						(int)(Math.random()*29),
-						5));*/
+						loft.add(new Cannibale(String.valueOf(i), loft.getCase((int)(Math.random()*loft.getH()), (int)(Math.random()*loft.getW())) , loft));
 					}
 				}
 			}
