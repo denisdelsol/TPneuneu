@@ -14,12 +14,14 @@ public class Vorace extends Erratique {
 	public void seDeplacer() {
 		Case caseArrivee = this.trouverPlusProcheNourriture();
 		if(caseArrivee != null){
+			this.caseCourrante.removeNeuneu(this);
 			this.caseCourrante = caseArrivee;
 			this.caseCourrante.addNeuneu(this);
 			return;
 		}
 		caseArrivee = this.trouverPlusProcheNeuneu();
 		if(caseArrivee != null){
+			this.caseCourrante.removeNeuneu(this);
 			this.caseCourrante = caseArrivee;
 			this.caseCourrante.addNeuneu(this);
 			return;

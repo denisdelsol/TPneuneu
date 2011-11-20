@@ -14,6 +14,7 @@ public class Cannibale extends Vorace {
 	public void seDeplacer() {
 		final Case caseArrivee = this.trouverPlusProcheNourritureNeuneu();
 		if (caseArrivee != null) {
+			this.caseCourrante.removeNeuneu(this);
 			this.caseCourrante = caseArrivee;
 			this.caseCourrante.addNeuneu(this);
 			return;
@@ -26,6 +27,28 @@ public class Cannibale extends Vorace {
 		super.copuler();
 		if (this.energie != Saison1.energieMort) {
 			this.loft.add(new Cannibale(this.caseCourrante, this.loft));
+		}
+	}
+
+	@Override
+	public void manger() {
+		super.manger();
+
+		if (this.energie < Saison1.energieDefault) {
+			final int nbNeuneu = caseCourrante.getNourriture().size();
+
+			if (nbNeuneu != 0) {
+				final int indexNourriture = (int) (Math.random() * (nbNeuneu - 1));
+				final Neuneu nourriture = caseCourrante.getNeuneu().get(
+						indexNourriture);
+				final int quantiteEnergie = nourriture.estMange();
+
+				if ((this.energie + quantiteEnergie) < Saison1.energieDefault) {
+					this.energie = this.energie + quantiteEnergie;
+				} else {
+					this.energie = Saison1.energieDefault;
+				}
+			}
 		}
 	}
 

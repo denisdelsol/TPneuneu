@@ -76,7 +76,7 @@ public abstract class Neuneu implements Mangeable {
 		final int nbNourriture = caseCourrante.getNourriture().size();
 
 		if (nbNourriture != 0) {
-			final int indexNourriture = (int) (Math.random() * nbNourriture);
+			final int indexNourriture = (int) (Math.random() * (nbNourriture - 1));
 			final Nourriture nourriture = caseCourrante.getNourriture().get(
 					indexNourriture);
 			final int quantiteEnergie = nourriture.estMange();
