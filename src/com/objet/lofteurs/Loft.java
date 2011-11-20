@@ -42,7 +42,7 @@ public class Loft implements ObjetDessinable {
 	}
 
 	/**
-	 * Lance l'�mission !
+	 * Lance l'emission !
 	 */
 	public void go() {
 		// TODO

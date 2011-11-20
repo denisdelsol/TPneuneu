@@ -65,7 +65,7 @@ public class Case {
 	}
 
 	/**
-	 * Ajoute un neuneu � la case
+	 * Ajoute un neuneu a la case
 	 * 
 	 * @param neuneu
 	 */
