@@ -1,6 +1,7 @@
 package com.objet.lofteurs;
 
 import java.awt.Graphics;
+import java.util.Map;
 
 import com.objet.lofteurs.neuneus.Neuneu;
 
@@ -16,8 +17,10 @@ public class Loft implements ObjetDessinable {
 	private final int h;
 	private final ZoneGraphique zone;
 	private Case[][] listeCases;
+	private Map<Integer, Neuneu> listeNeuneu;
 
 	/**
+	 * Crée un loft avec le nombre de cases nécessaires.
 	 * 
 	 * @param w
 	 *            largeur du loft
@@ -55,26 +58,12 @@ public class Loft implements ObjetDessinable {
 	}
 
 	/**
-	 * Ajoute un neuneu au loft aléatoirement.
+	 * Ajoute un neuneu à la liste des neuneus du loft.
 	 * 
 	 * @param neuneu
 	 */
 	public void add(Neuneu neuneu) {
-		int positionX = (int) (Math.random() * w);
-		int positionY = (int) (Math.random() * h);
-
-		add(neuneu, positionX, positionY);
-	}
-
-	/**
-	 * Ajoute un neuneu au loft dans une case particulière.
-	 * 
-	 * @param neuneu
-	 * @param positionX
-	 * @param positionY
-	 */
-	public void add(Neuneu neuneu, int positionX, int positionY) {
-		listeCases[positionX][positionY].addNeuneu(neuneu);
+		listeNeuneu.put(listeNeuneu.size(), neuneu);
 	}
 
 	@Override
