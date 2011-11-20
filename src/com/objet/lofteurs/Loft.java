@@ -1,7 +1,7 @@
 package com.objet.lofteurs;
 
 import java.awt.Graphics;
-import java.util.Map;
+import java.util.ArrayList;
 
 import com.objet.lofteurs.neuneus.Neuneu;
 
@@ -17,10 +17,10 @@ public class Loft implements ObjetDessinable {
 	private final int h;
 	private final ZoneGraphique zone;
 	private Case[][] listeCases;
-	private Map<Integer, Neuneu> listeNeuneu;
+	private ArrayList<Neuneu> listeNeuneu;
 
 	/**
-	 * Cr�e un loft avec le nombre de cases n�cessaires.
+	 * Cree un loft avec le nombre de cases necessaires.
 	 * 
 	 * @param w
 	 *            largeur du loft
@@ -42,7 +42,7 @@ public class Loft implements ObjetDessinable {
 	}
 
 	/**
-	 * Lance l'�mission !
+	 * Lance l'emission !
 	 */
 	public void go() {
 		// TODO
@@ -63,7 +63,16 @@ public class Loft implements ObjetDessinable {
 	 * @param neuneu
 	 */
 	public void add(Neuneu neuneu) {
-		listeNeuneu.put(listeNeuneu.size(), neuneu);
+		listeNeuneu.add(neuneu);
+	}
+
+	/**
+	 * Supprime un neuneu de la liste des neuneus du loft
+	 * 
+	 * @param neuneu
+	 */
+	public void removeNeuneu(Neuneu neuneu) {
+		listeNeuneu.remove(neuneu);
 	}
 
 	@Override
@@ -71,27 +80,31 @@ public class Loft implements ObjetDessinable {
 		// TODO Auto-generated method stub
 
 	}
-	
+
 	/**
 	 * Permet de recuperer une case du loft
 	 * 
-	 * @param coordX - coordonnee selon X de la case
-	 * @param coordY - coordonnee selon Y de la case
+	 * @param coordX
+	 *            - coordonnee selon X de la case
+	 * @param coordY
+	 *            - coordonnee selon Y de la case
 	 * @return La case du loft demandee
 	 */
-	public Case getCase(int coordX, int coordY){
+	public Case getCase(int coordX, int coordY) {
 		return this.listeCases[coordX][coordY];
 	}
-	
+
 	/**
 	 * Permet de savoir si une case existe dans le loft
 	 * 
-	 * @param coordX - la coordonnée selon x
-	 * @param coordY - la coordonnée selon y
+	 * @param coordX
+	 *            - la coordonnée selon x
+	 * @param coordY
+	 *            - la coordonnée selon y
 	 * @return vrai si la case existe, faux sinon
 	 */
-	public boolean caseExiste(int coordX, int coordY){
-		if (0 <= coordX && coordX < this.w && 0 <= coordY && coordY < this.h){
+	public boolean caseExiste(int coordX, int coordY) {
+		if (0 <= coordX && coordX < this.w && 0 <= coordY && coordY < this.h) {
 			return true;
 		}
 		return false;
