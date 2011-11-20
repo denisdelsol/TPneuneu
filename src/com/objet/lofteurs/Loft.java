@@ -83,6 +83,13 @@ public class Loft implements ObjetDessinable {
 		return this.listeCases[coordX][coordY];
 	}
 	
+	/**
+	 * Permet de savoir si une case existe dans le loft
+	 * 
+	 * @param coordX - la coordonnée selon x
+	 * @param coordY - la coordonnée selon y
+	 * @return vrai si la case existe, faux sinon
+	 */
 	public boolean caseExiste(int coordX, int coordY){
 		if (0 <= coordX && coordX < this.w && 0 <= coordY && coordY < this.h){
 			return true;
