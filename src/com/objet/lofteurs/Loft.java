@@ -3,6 +3,7 @@ package com.objet.lofteurs;
 import java.awt.Graphics;
 import java.util.ArrayList;
 
+import com.lofteur.nourriture.Viande;
 import com.objet.lofteurs.neuneus.Neuneu;
 
 /**
@@ -72,8 +73,10 @@ public class Loft implements ObjetDessinable {
 	 * 
 	 * @param nombre
 	 */
-	public void remplissageAleatoire(float nombre) {
-		// TODO
+	public void remplissageAleatoire(float repartition) {
+		for (int nombre = 0; nombre < (int) (repartition * 100); nombre++) {
+			zone.ajouterObjet(new Viande(10, this.listeCases[(int)(Math.random()*w)][(int)(Math.random()*h)]));
+		}
 	}
 
 	/**
@@ -97,8 +100,8 @@ public class Loft implements ObjetDessinable {
 
 	@Override
 	public void dessinerObjet(Graphics g) {
-		//Le loft est délimite par un rectangle
-		g.drawRect(10, 10, w*10, h*10);
+		// Le loft est délimite par un rectangle
+		g.drawRect(10, 10, w * 10, h * 10);
 	}
 
 	/**
