@@ -1,5 +1,7 @@
 package com.lofteur.nourriture;
 
+import java.awt.Graphics;
+
 public class Viande extends Nourriture {
 
 	/**
@@ -15,6 +17,12 @@ public class Viande extends Nourriture {
 	public int estMange() {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	public void dessinerObjet(Graphics g) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

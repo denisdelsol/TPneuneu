@@ -1,5 +1,7 @@
 package com.objet.lofteurs.neuneus;
 
+import java.awt.Graphics;
+
 import com.objet.lofteurs.Case;
 import com.objet.lofteurs.Loft;
 import com.objet.lofteurs.Saison1;
@@ -41,6 +43,12 @@ public class Erratique extends Neuneu {
 		if (this.energie != Saison1.energieMort) {
 			this.loft.add(new Erratique(this.caseCourrante, this.loft));
 		}
+	}
+
+	@Override
+	public void dessinerObjet(Graphics g) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
