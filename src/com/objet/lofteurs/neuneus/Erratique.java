@@ -1,5 +1,6 @@
 package com.objet.lofteurs.neuneus;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 import com.objet.lofteurs.Case;
@@ -47,8 +48,8 @@ public class Erratique extends Neuneu {
 
 	@Override
 	public void dessinerObjet(Graphics g) {
-		// TODO Auto-generated method stub
-		
+		g.fillOval(this.caseCourrante.getX()*10+10, this.caseCourrante.getY()*10+10, 10, 10);
+		g.setColor(Color.blue);
 	}
 
 }

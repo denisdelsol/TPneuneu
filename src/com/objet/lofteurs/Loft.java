@@ -97,8 +97,8 @@ public class Loft implements ObjetDessinable {
 
 	@Override
 	public void dessinerObjet(Graphics g) {
-		// TODO Auto-generated method stub
-
+		//Le loft est délimite par un rectangle
+		g.drawRect(10, 10, w*10, h*10);
 	}
 
 	/**

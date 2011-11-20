@@ -1,6 +1,9 @@
 package com.lofteur.nourriture;
 
+import java.awt.Color;
 import java.awt.Graphics;
+
+import com.objet.lofteurs.Case;
 
 public class Viande extends Nourriture {
 
@@ -8,8 +11,8 @@ public class Viande extends Nourriture {
 	 * Constructeur de Viande.
 	 * @param quantite
 	 */
-	public Viande(int quantite) {
-		super(quantite);
+	public Viande(int quantite, Case caseCourrante) {
+		super(quantite, caseCourrante);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -21,8 +24,8 @@ public class Viande extends Nourriture {
 
 	@Override
 	public void dessinerObjet(Graphics g) {
-		// TODO Auto-generated method stub
-		
+		g.fillRect(this.caseCourrante.getX()*10+10, this.caseCourrante.getY()*10+10, 10, 10);
+		g.setColor(Color.red);
 	}
 	
 }

@@ -1,5 +1,6 @@
 package com.lofteur.nourriture;
 
+import com.objet.lofteurs.Case;
 import com.objet.lofteurs.Mangeable;
 import com.objet.lofteurs.ObjetDessinable;
 
@@ -10,9 +11,29 @@ import com.objet.lofteurs.ObjetDessinable;
  */
 public abstract class Nourriture implements ObjetDessinable, Mangeable {
 
-	int quantite;
+	protected int quantite;
+	protected Case caseCourrante;
 
-	public Nourriture(int quantite){
+	/**
+	 * Obtient la quantite de nourriture
+	 * 
+	 * @return
+	 */
+	public int getQuantite() {
+		return quantite;
+	}
+
+	/**
+	 * Obtient la case courante pour l'element
+	 * 
+	 * @return
+	 */
+	public Case getCaseCourrante() {
+		return caseCourrante;
+	}
+
+	public Nourriture(int quantite, Case caseCourante){
 		this.quantite = quantite;
+		this.caseCourrante = caseCourante;
 	}
 }
