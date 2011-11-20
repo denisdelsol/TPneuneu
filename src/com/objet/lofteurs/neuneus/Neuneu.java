@@ -23,6 +23,14 @@ public abstract class Neuneu implements Mangeable {
 
 	public abstract Case seDeplacer();
 
+	public boolean estMort() {
+		if (this.energie == Saison1.energieMort) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	public void manger() {
 		final int nbNourriture = caseCourrante.getNourriture().size();
 
@@ -42,15 +50,15 @@ public abstract class Neuneu implements Mangeable {
 
 	public void seReproduire() {
 		final int nbNeuneu = caseCourrante.getNeuneu().size();
-		
-		if (nbNeuneu != 0){
-			if ((this.energie - Saison1.energieReproduction) <= Saison1.energieMort){
+
+		if (nbNeuneu != 0) {
+			if ((this.energie - Saison1.energieReproduction) <= Saison1.energieMort) {
 				this.energie = Saison1.energieMort;
 			}
-			
-			else{
-				this.energie = this.energie - Saison1.energieReproduction;	
-			}	
+
+			else {
+				this.energie = this.energie - Saison1.energieReproduction;
+			}
 		}
 	}
 
