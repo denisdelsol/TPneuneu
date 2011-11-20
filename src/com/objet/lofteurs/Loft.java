@@ -82,7 +82,6 @@ public class Loft implements ObjetDessinable {
 	 */
 	public void add(Neuneu neuneu) {
 		listeNeuneu.add(neuneu);
-		//listeCases[]
 	}
 
 	/**
