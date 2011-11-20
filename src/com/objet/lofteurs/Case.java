@@ -26,6 +26,8 @@ public class Case {
 	public Case(int x, int y) {
 		this.x = x;
 		this.y = y;
+		listeNeuneus = new ArrayList<Neuneu>();
+		listeNourriture = new ArrayList<Nourriture>();
 	}
 
 	/**
