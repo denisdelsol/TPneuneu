@@ -49,7 +49,7 @@ public abstract class Neuneu implements Mangeable {
 	 * 
 	 */
 	public abstract void seDeplacer();
-	
+
 	/**
 	 * Permet au Neuneu de se reproduire
 	 * 
@@ -117,8 +117,6 @@ public abstract class Neuneu implements Mangeable {
 		return quantiteNourriture;
 	}
 
-
-	
 	/**
 	 * Permet de trouver la case la plus proche avec un Neuneu dessus
 	 * 
@@ -134,7 +132,7 @@ public abstract class Neuneu implements Mangeable {
 			for (int x = -i; x <= i; x++) {
 				for (int y = -i; y <= i; y++) {
 					if (this.loft.caseExiste(x, y)) {
-						if (!this.loft.getCase(x, y).getNeuneu().isEmpty()){
+						if (!this.loft.getCase(x, y).getNeuneu().isEmpty()) {
 							return this.loft.getCase(x, y);
 						}
 					}
@@ -146,10 +144,10 @@ public abstract class Neuneu implements Mangeable {
 				return null;
 			}
 		}
-		
+
 		return null;
 	}
-	
+
 	/**
 	 * Permet de trouver la case la plus proche avec de la nourriture dessus
 	 * 
@@ -165,7 +163,7 @@ public abstract class Neuneu implements Mangeable {
 			for (int x = -i; x <= i; x++) {
 				for (int y = -i; y <= i; y++) {
 					if (this.loft.caseExiste(x, y)) {
-						if (!this.loft.getCase(x, y).getNourriture().isEmpty()){
+						if (!this.loft.getCase(x, y).getNourriture().isEmpty()) {
 							return this.loft.getCase(x, y);
 						}
 					}
@@ -180,4 +178,36 @@ public abstract class Neuneu implements Mangeable {
 		return null;
 	}
 
+	/**
+	 * Permet de trouver la case la plus proche avec de la nourriture ou un
+	 * neuneu dessus
+	 * 
+	 * @return La case trouver ou null si aucune case trouvée
+	 */
+	protected Case trouverPlusProcheNourritureNeuneu() {
+		boolean nourritureTrouve = false;
+		final int coordX = this.caseCourrante.getX();
+		final int coordY = this.caseCourrante.getY();
+		int i = 0;
+
+		while (!nourritureTrouve) {
+			for (int x = -i; x <= i; x++) {
+				for (int y = -i; y <= i; y++) {
+					if (this.loft.caseExiste(x, y)) {
+						if ((!this.loft.getCase(x, y).getNourriture().isEmpty())
+								|| (!this.loft.getCase(x, y).getNeuneu()
+										.isEmpty())) {
+							return this.loft.getCase(x, y);
+						}
+					}
+				}
+			}
+			i++;
+			if (i > Math.max(Math.max((Saison1.largeurLoft - coordX), coordX),
+					Math.max((Saison1.longueurLoft - coordY), coordY))) {
+				return null;
+			}
+		}
+		return null;
+	}
 }
