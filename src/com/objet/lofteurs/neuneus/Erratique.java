@@ -25,9 +25,13 @@ public class Erratique extends Neuneu {
 	}
 
 	@Override
-	public Case seDeplacer() {
-		// TODO Implémenter la méthode
-		return new Case(0, 0);
+	public void seDeplacer() {
+		final int coordX = (int)(Math.random()*Saison1.largeurLoft);
+		final int coordY = (int)(Math.random()*Saison1.longueurLoft);
+		
+		this.caseCourrante = this.loft.getCase(coordX, coordY);
+		this.caseCourrante.addNeuneu(this);
+		return ;
 	}
 
 	@Override

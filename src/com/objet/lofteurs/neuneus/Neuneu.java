@@ -46,7 +46,7 @@ public abstract class Neuneu implements Mangeable {
 	 * 
 	 * @return La case d'arrivee du Neuneu
 	 */
-	public abstract Case seDeplacer();
+	public abstract void seDeplacer();
 
 	/**
 	 * Permet de savoir si le Neuneu est mort
