@@ -36,7 +36,7 @@ public class Erratique extends Neuneu {
 
 	@Override
 	public void seReproduire() {
-		super.seReproduire();
+		super.copuler();
 		if (this.energie != Saison1.energieMort) {
 			this.loft.add(new Erratique(this.caseCourrante, this.loft));
 		}

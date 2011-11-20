@@ -50,6 +50,8 @@ public abstract class Neuneu implements Mangeable {
 	 * @return La case d'arrivee du Neuneu
 	 */
 	public abstract void seDeplacer();
+	
+	public abstract void seReproduire();
 
 	/**
 	 * Permet de savoir si le Neuneu est mort
@@ -85,9 +87,9 @@ public abstract class Neuneu implements Mangeable {
 	}
 
 	/**
-	 * Permet au Neuneu de se reproduire, ceci lui fait perdre de l'energie
+	 * Permet au Neuneu de copuler, ceci lui fait perdre de l'energie
 	 */
-	public void seReproduire() {
+	public void copuler() {
 		final int nbNeuneu = caseCourrante.getNeuneu().size();
 
 		if (nbNeuneu != 0) {
