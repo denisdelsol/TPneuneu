@@ -20,7 +20,7 @@ public class Loft implements ObjetDessinable {
 	private final ZoneGraphique zone;
 	private Case[][] listeCases;
 	private ArrayList<Neuneu> listeNeuneu;
-	private final int nombreDeTours = 5;
+	private final int nombreDeTours = 15;
 
 	/**
 	 * Cree un loft avec le nombre de cases necessaires.
@@ -70,14 +70,12 @@ public class Loft implements ObjetDessinable {
 
 		for (int i = 0; i < nombreDeTours; i++) {
 			for (Neuneu neuneu : listeNeuneu) {
-				// TODO déroulement de la recherche de nourriture (ou autre...)
-				// et deplacement du neuneu
-				// System.out.println(neuneu.getClass().toString());
+				// TODO
 				neuneu.seDeplacer();
 			}
 			zone.repaint();
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(700);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -119,7 +117,7 @@ public class Loft implements ObjetDessinable {
 	public void dessinerObjet(Graphics g) {
 		// Le loft est délimite par un rectangle
 		g.setColor(Color.black);
-		g.drawRect(10, 10, w * 10, h * 10);
+		g.drawRect(10, 10, w * Saison1.tailleCase, h * Saison1.tailleCase);
 	}
 
 	/**

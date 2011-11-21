@@ -54,11 +54,10 @@ public class Cannibale extends Vorace {
 			}
 		}
 	}
-	
+
 	@Override
 	public void dessinerObjet(Graphics g) {
-		g.setColor(Color.red);
-		g.fillOval(this.caseCourrante.getX()*10+10, this.caseCourrante.getY()*10+10, 10, 10);
+		super.dessinerObjet(g, Color.red);
 	}
 
 }

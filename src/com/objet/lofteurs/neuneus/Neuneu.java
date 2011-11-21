@@ -1,5 +1,8 @@
 package com.objet.lofteurs.neuneus;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
 import com.lofteur.nourriture.Nourriture;
 import com.objet.lofteurs.Case;
 import com.objet.lofteurs.Loft;
@@ -210,5 +213,13 @@ public abstract class Neuneu implements Mangeable, ObjetDessinable {
 			}
 		}
 		return null;
+	}
+	
+	/**
+	 * Dessine un Neuneu
+	 */
+	public void dessinerObjet(Graphics g, Color color) {
+		g.setColor(color);
+		g.fillOval(this.caseCourrante.getX()*Saison1.tailleCase+10, this.caseCourrante.getY()*Saison1.tailleCase+10, Saison1.tailleNeuneu, Saison1.tailleNeuneu);
 	}
 }
