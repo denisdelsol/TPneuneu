@@ -20,6 +20,9 @@ public class Saison1 {
 	public static final int energieMort = 0;
 	public static final int longueurLoft = 30;
 	public static final int largeurLoft = 25;
+	public static final int tailleCase = 10;
+	public static final int tailleNeuneu = 10;
+	public static final int tailleNourriture = 5;
 
 	/**
 	 * @param args

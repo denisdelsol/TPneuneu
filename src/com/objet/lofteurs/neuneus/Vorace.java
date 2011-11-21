@@ -16,22 +16,19 @@ public class Vorace extends Erratique {
 	@Override
 	public void seDeplacer() {
 		Case caseArrivee = this.trouverPlusProcheNourriture();
-		if(caseArrivee != null){
+		if (caseArrivee != null) {
 			this.caseCourrante.removeNeuneu(this);
 			this.caseCourrante = caseArrivee;
 			this.caseCourrante.addNeuneu(this);
 			return;
 		}
-		caseArrivee = this.trouverPlusProcheNeuneu();
-		if(caseArrivee != null){
-			this.caseCourrante.removeNeuneu(this);
-			this.caseCourrante = caseArrivee;
-			this.caseCourrante.addNeuneu(this);
-			return;
-		}
+
+		this.caseCourrante.removeNeuneu(this);
+		this.caseCourrante = this.mouvementAleatoire();
+		this.caseCourrante.addNeuneu(this);
 		return;
 	}
-	
+
 	@Override
 	public void seReproduire() {
 		super.copuler();
@@ -39,11 +36,10 @@ public class Vorace extends Erratique {
 			this.loft.add(new Vorace(this.caseCourrante, this.loft));
 		}
 	}
-	
+
 	@Override
 	public void dessinerObjet(Graphics g) {
-		g.setColor(Color.orange);
-		g.fillOval(this.caseCourrante.getX()*10+10, this.caseCourrante.getY()*10+10, 10, 10);
+		super.dessinerObjet(g, Color.orange);
 	}
 
 }

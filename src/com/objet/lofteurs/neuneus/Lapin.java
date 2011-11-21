@@ -12,27 +12,23 @@ public class Lapin extends Erratique {
 	public Lapin(Case caseCourrante, Loft loft) {
 		super(caseCourrante, loft);
 	}
-	
+
 	@Override
-	public void seDeplacer(){
+	public void seDeplacer() {
 		Case caseArrivee = this.trouverPlusProcheNeuneu();
-		if(caseArrivee != null){
+		if (caseArrivee != null) {
 			this.caseCourrante.removeNeuneu(this);
 			this.caseCourrante = caseArrivee;
 			this.caseCourrante.addNeuneu(this);
 			return;
 		}
-		
-		caseArrivee = this.trouverPlusProcheNourriture();
-		if(caseArrivee != null){
-			this.caseCourrante.removeNeuneu(this);
-			this.caseCourrante = caseArrivee;
-			this.caseCourrante.addNeuneu(this);
-			return;
-		}
+
+		this.caseCourrante.removeNeuneu(this);
+		this.caseCourrante = this.mouvementAleatoire();
+		this.caseCourrante.addNeuneu(this);
 		return;
 	}
-	
+
 	@Override
 	public void seReproduire() {
 		super.copuler();
@@ -40,11 +36,10 @@ public class Lapin extends Erratique {
 			this.loft.add(new Lapin(this.caseCourrante, this.loft));
 		}
 	}
-	
+
 	@Override
 	public void dessinerObjet(Graphics g) {
-		g.fillOval(this.caseCourrante.getX()*10+10, this.caseCourrante.getY()*10+10, 10, 10);
-		g.setColor(Color.pink);
+		super.dessinerObjet(g, Color.pink);
 	}
 
 }

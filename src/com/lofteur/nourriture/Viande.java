@@ -13,7 +13,6 @@ public class Viande extends Nourriture {
 	 */
 	public Viande(int quantite, Case caseCourrante) {
 		super(quantite, caseCourrante);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -24,8 +23,7 @@ public class Viande extends Nourriture {
 
 	@Override
 	public void dessinerObjet(Graphics g) {
-		g.setColor(Color.red);
-		g.fillRect(this.caseCourrante.getX()*10+10, this.caseCourrante.getY()*10+10, 5, 5);
+		super.dessinerObjet(g, Color.red);
 	}
 	
 }

@@ -1,5 +1,8 @@
 package com.objet.lofteurs.neuneus;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
 import com.lofteur.nourriture.Nourriture;
 import com.objet.lofteurs.Case;
 import com.objet.lofteurs.Loft;
@@ -124,29 +127,22 @@ public abstract class Neuneu implements Mangeable, ObjetDessinable {
 	 * @return La case trouver ou null si aucune case trouvée
 	 */
 	protected Case trouverPlusProcheNeuneu() {
-		boolean neuneuTrouve = false;
 		final int coordX = this.caseCourrante.getX();
 		final int coordY = this.caseCourrante.getY();
-		int i = 0;
+		final int i = 1;
 
-		while (!neuneuTrouve) {
-			for (int x = -i; x <= i; x++) {
-				for (int y = -i; y <= i; y++) {
+		for (int x = -i; x <= i; x++) {
+			for (int y = -i; y <= i; y++) {
+				if (Math.abs(x) + Math.abs(y) != 0) {
 					if (this.loft.caseExiste(coordX + x, coordY + y)) {
-						final Case caseBuffer = this.loft.getCase(coordX + x, coordY + y);
-						if (!(caseBuffer.getNeuneu().size()==0)) {
-							return this.loft.getCase(x, y);
+						if ((!this.loft.getCase(coordX + x, coordY + y)
+								.getNeuneu().isEmpty())) {
+							return this.loft.getCase(coordX + x, coordY + y);
 						}
 					}
 				}
 			}
-			i++;
-			if (i > Math.max(Math.max((Saison1.largeurLoft - coordX), coordX),
-					Math.max((Saison1.longueurLoft - coordY), coordY))) {
-				return null;
-			}
 		}
-
 		return null;
 	}
 
@@ -156,26 +152,20 @@ public abstract class Neuneu implements Mangeable, ObjetDessinable {
 	 * @return La case trouver ou null si aucune case trouvée
 	 */
 	protected Case trouverPlusProcheNourriture() {
-		boolean nourritureTrouve = false;
 		final int coordX = this.caseCourrante.getX();
 		final int coordY = this.caseCourrante.getY();
-		int i = 0;
+		final int i = 1;
 
-		while (!nourritureTrouve) {
-			for (int x = -i; x <= i; x++) {
-				for (int y = -i; y <= i; y++) {
+		for (int x = -i; x <= i; x++) {
+			for (int y = -i; y <= i; y++) {
+				if (Math.abs(x) + Math.abs(y) != 0) {
 					if (this.loft.caseExiste(coordX + x, coordY + y)) {
-						final Case caseBuffer = this.loft.getCase(coordX + x, coordY + y);
-						if (!(caseBuffer.getNourriture().size()==0)) {
-							return this.loft.getCase(x, y);
+						if ((!this.loft.getCase(coordX + x, coordY + y)
+								.getNourriture().isEmpty())) {
+							return this.loft.getCase(coordX + x, coordY + y);
 						}
 					}
 				}
-			}
-			i++;
-			if (i > Math.max(Math.max((Saison1.largeurLoft - coordX), coordX),
-					Math.max((Saison1.longueurLoft - coordY), coordY))) {
-				return null;
 			}
 		}
 		return null;
@@ -188,29 +178,56 @@ public abstract class Neuneu implements Mangeable, ObjetDessinable {
 	 * @return La case trouver ou null si aucune case trouvée
 	 */
 	protected Case trouverPlusProcheNourritureNeuneu() {
-		boolean nourritureTrouve = false;
 		final int coordX = this.caseCourrante.getX();
 		final int coordY = this.caseCourrante.getY();
-		int i = 0;
+		final int i = 1;
 
-		while (!nourritureTrouve) {
-			for (int x = -i; x <= i; x++) {
-				for (int y = -i; y <= i; y++) {
-					if (this.loft.caseExiste(x, y)) {
-						if ((!this.loft.getCase(x, y).getNourriture().isEmpty())
-								|| (!this.loft.getCase(x, y).getNeuneu()
-										.isEmpty())) {
-							return this.loft.getCase(x, y);
+		for (int x = -i; x <= i; x++) {
+			for (int y = -i; y <= i; y++) {
+				if (Math.abs(x) + Math.abs(y) != 0) {
+					if (this.loft.caseExiste(coordX + x, coordY + y)) {
+						if ((!this.loft.getCase(coordX + x, coordY + y)
+								.getNourriture().isEmpty())
+								|| (!this.loft.getCase(coordX + x, coordY + y)
+										.getNeuneu().isEmpty())) {
+							return this.loft.getCase(coordX + x, coordY + y);
 						}
 					}
 				}
 			}
-			i++;
-			if (i > Math.max(Math.max((Saison1.largeurLoft - coordX), coordX),
-					Math.max((Saison1.longueurLoft - coordY), coordY))) {
-				return null;
-			}
 		}
 		return null;
+	}
+
+	/**
+	 * Permet de se deplacer aléatoirement
+	 * 
+	 * @return la Case d'arrivée
+	 */
+	protected Case mouvementAleatoire() {
+		final int coordX = this.caseCourrante.getX();
+		final int coordY = this.caseCourrante.getY();
+
+		int newCoordX = coordX - 1 + (int) (Math.random() * 2);
+		int newCoordY = coordY - 1 + (int) (Math.random() * 2);
+
+		while ((!this.loft.caseExiste(newCoordX, newCoordY))
+				|| (Math.abs(coordX - newCoordX) + Math.abs(coordY - newCoordY) == 0)) {
+			newCoordX = coordX - 1 + (int) (Math.random() * 2);
+			newCoordY = coordY - 1 + (int) (Math.random() * 2);
+		}
+
+		return this.loft.getCase(newCoordX, newCoordY);
+
+	}
+
+	/**
+	 * Dessine un Neuneu
+	 */
+	public void dessinerObjet(Graphics g, Color color) {
+		g.setColor(color);
+		g.fillOval(this.caseCourrante.getX() * Saison1.tailleCase + 10,
+				this.caseCourrante.getY() * Saison1.tailleCase + 10,
+				Saison1.tailleNeuneu, Saison1.tailleNeuneu);
 	}
 }
