@@ -12,9 +12,7 @@ import com.objet.lofteurs.Saison1;
 
 /**
  * Represente un Neuneu quelconque
- * 
- * @author bastien
- * 
+ * @author  bastien
  */
 public abstract class Neuneu implements Mangeable, ObjetDessinable {
 	/**
@@ -23,10 +21,14 @@ public abstract class Neuneu implements Mangeable, ObjetDessinable {
 	protected int energie = Saison1.energieDefault;
 	/**
 	 * Represente le loft dans lequel evolue le neuneu
+	 * @uml.property  name="loft"
+	 * @uml.associationEnd  
 	 */
 	protected final Loft loft;
-	/**
+	/** 
 	 * Represente la case sur laquelle se trouve le Neuneu a un moment donne
+	 * @uml.property name="caseCourrante"
+	 * @uml.associationEnd 
 	 */
 	protected Case caseCourrante;
 

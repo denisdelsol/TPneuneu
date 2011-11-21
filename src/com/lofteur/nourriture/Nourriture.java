@@ -11,19 +11,29 @@ import com.objet.lofteurs.Saison1;
 
 /**
  * Classe abstraite permettant de g�rer la nourriture.
- * @author Denis
- *
+ * @author  Denis
  */
 public abstract class Nourriture implements ObjetDessinable, Mangeable {
 
+	/**
+	 * @uml.property  name="quantite"
+	 */
 	protected int quantite;
+	/**
+	 * @uml.property  name="caseCourrante"
+	 * @uml.associationEnd  
+	 */
 	protected Case caseCourrante;
+	/**
+	 * @uml.property  name="loft"
+	 * @uml.associationEnd  
+	 */
 	protected Loft loft;
 
 	/**
 	 * Obtient la quantite de nourriture
-	 * 
 	 * @return
+	 * @uml.property  name="quantite"
 	 */
 	public int getQuantite() {
 		return quantite;
@@ -31,8 +41,8 @@ public abstract class Nourriture implements ObjetDessinable, Mangeable {
 
 	/**
 	 * Obtient la case courante pour l'element
-	 * 
 	 * @return
+	 * @uml.property  name="caseCourrante"
 	 */
 	public Case getCaseCourrante() {
 		return caseCourrante;

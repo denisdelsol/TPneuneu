@@ -9,15 +9,27 @@ import com.objet.lofteurs.neuneus.Neuneu;
 
 /**
  * Classe correspondant au Loft
- * 
- * @author Denis
- * 
+ * @author  Denis
  */
 public class Loft implements ObjetDessinable {
 
+	/**
+	 * @uml.property  name="w"
+	 */
 	private final int w;
+	/**
+	 * @uml.property  name="h"
+	 */
 	private final int h;
+	/**
+	 * @uml.property  name="zone"
+	 * @uml.associationEnd  
+	 */
 	private final ZoneGraphique zone;
+	/**
+	 * @uml.property  name="listeCases"
+	 * @uml.associationEnd  multiplicity="(0 -1)"
+	 */
 	private Case[][] listeCases;
 	private ArrayList<Neuneu> listeNeuneu;
 //	private final int nombreDeTours = 100;
@@ -47,8 +59,8 @@ public class Loft implements ObjetDessinable {
 
 	/**
 	 * Obtient w.
-	 * 
 	 * @return
+	 * @uml.property  name="w"
 	 */
 	public int getW() {
 		return w;
@@ -56,8 +68,8 @@ public class Loft implements ObjetDessinable {
 
 	/**
 	 * Obtient h.
-	 * 
 	 * @return
+	 * @uml.property  name="h"
 	 */
 	public int getH() {
 		return h;

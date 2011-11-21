@@ -7,12 +7,17 @@ import com.objet.lofteurs.neuneus.Neuneu;
 
 /**
  * Classe repr�sentant une case du loft.
- * 
- * @author Denis
+ * @author  Denis
  */
 public class Case {
 
+	/**
+	 * @uml.property  name="x"
+	 */
 	private final int x;
+	/**
+	 * @uml.property  name="y"
+	 */
 	private final int y;
 	private ArrayList<Nourriture> listeNourriture;
 	private ArrayList<Neuneu> listeNeuneus;
@@ -32,8 +37,8 @@ public class Case {
 
 	/**
 	 * Obtient la valeur de x.
-	 * 
-	 * @return x
+	 * @return  x
+	 * @uml.property  name="x"
 	 */
 	public int getX() {
 		return x;
@@ -41,8 +46,8 @@ public class Case {
 
 	/**
 	 * Obtient la valeur de y.
-	 * 
-	 * @return the y
+	 * @return  the y
+	 * @uml.property  name="y"
 	 */
 	public int getY() {
 		return y;

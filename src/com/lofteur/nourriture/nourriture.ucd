@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="nourriture" size="918,1428" id="com.lofteur.nourriture" metadata="uml2-1.0" initialized="true" zoom="0.65" scrolledY="6" tag="1000" key="32303037303533312D313030302054506E65756E65752F6261737469656E">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.0 //@children.11/@sourceConnections.0 //@children.6/@sourceConnections.0" name="Case" location="855,450" size="149,225" id="com.objet.lofteurs/Case" runTimeClassModel="removeNeuneu(Lcom.objet.lofteurs.neuneus.Neuneu;),addNeuneu(Lcom.objet.lofteurs.neuneus.Neuneu;),removeNourriture(Lcom.lofteur.nourriture.Nourriture;),getNeuneu(),getNourriture(),addNourriture(Lcom.lofteur.nourriture.Nourriture;),Case(II),y,x">
+    <children xsi:type="editmodel:CompartmentEditModel" size="46,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="x" id="com.objet.lofteurs/Case#x"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="y" id="com.objet.lofteurs/Case#y"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="126,126">
+      <children xsi:type="editmodel:MethodEditModel" name="Case" id="com.objet.lofteurs/Case#Case(II)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addNeuneu" id="com.objet.lofteurs/Case#addNeuneu(Lcom.objet.lofteurs.neuneus.Neuneu;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addNourriture" id="com.objet.lofteurs/Case#addNourriture(Lcom.lofteur.nourriture.Nourriture;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNeuneu" id="com.objet.lofteurs/Case#getNeuneu()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNourriture" id="com.objet.lofteurs/Case#getNourriture()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeNeuneu" id="com.objet.lofteurs/Case#removeNeuneu(Lcom.objet.lofteurs.neuneus.Neuneu;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeNourriture" id="com.objet.lofteurs/Case#removeNourriture(Lcom.lofteur.nourriture.Nourriture;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Cannibale" location="14,523" size="173,153" id="com.objet.lofteurs.neuneus/Cannibale" runTimeClassModel="Cannibale(Lcom.objet.lofteurs.Case;Lcom.objet.lofteurs.Loft;),manger(),dessinerObjet(Ljava.awt.Graphics;),seDeplacer(),seReproduire()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="106,90">
+      <children xsi:type="editmodel:MethodEditModel" name="Cannibale" id="com.objet.lofteurs.neuneus/Cannibale#Cannibale(Lcom.objet.lofteurs.Case;Lcom.objet.lofteurs.Loft;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="dessinerObjet" id="com.objet.lofteurs.neuneus/Cannibale#dessinerObjet(Ljava.awt.Graphics;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="manger" id="com.objet.lofteurs.neuneus/Cannibale#manger()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="seDeplacer" id="com.objet.lofteurs.neuneus/Cannibale#seDeplacer()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="seReproduire" id="com.objet.lofteurs.neuneus/Cannibale#seReproduire()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="com.objet.lofteurs.neuneus/Vorace&lt;-com.objet.lofteurs.neuneus/Cannibale" source="//@children.1" target="//@children.4" targetEnd="//@children.1/@sourceConnections.0/@children.1" sourceEnd="//@children.1/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="86,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="86,135"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.7/@sourceConnections.0 //@children.9/@sourceConnections.0" name="Nourriture" location="509,392" size="129,122" id="com.lofteur.nourriture/Nourriture" runTimeClassModel="dessinerObjet(Ljava.awt.Graphics;Ljava.awt.Color;),Nourriture(ILcom.objet.lofteurs.Case;Lcom.objet.lofteurs.Loft;),quantite,estMange()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="86,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="quantite" id="com.lofteur.nourriture/Nourriture#quantite"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="106,54">
+      <children xsi:type="editmodel:MethodEditModel" name="Nourriture" id="com.lofteur.nourriture/Nourriture#Nourriture(ILcom.objet.lofteurs.Case;Lcom.objet.lofteurs.Loft;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="dessinerObjet" id="com.lofteur.nourriture/Nourriture#dessinerObjet(Ljava.awt.Graphics;Ljava.awt.Color;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="estMange" id="com.lofteur.nourriture/Nourriture#estMange()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="com.objet.lofteurs/Case@caseCourrante+com.lofteur.nourriture/Nourriture@" source="//@children.2" target="//@children.0" targetEnd="//@children.2/@sourceConnections.0/@children.2" label="//@children.2/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="129,90" id="com.objet.lofteurs/Case@caseCourrante+com.lofteur.nourriture/Nourriture@|com.lofteur.nourriture/Nourriture#" attachSource="true" roleLabel="//@children.2/@sourceConnections.0/@children.1/@children.0">
+        <children xsi:type="editmodel:LabelEditModel" location="643,461" size="0,13" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="caseCourrante" location="0,32" id="com.objet.lofteurs/Case@caseCourrante+com.lofteur.nourriture/Nourriture@|com.objet.lofteurs/Case#caseCourrante" multiplicityLabel="//@children.2/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.2/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" # caseCourrante" location="751,461" size="95,13" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="826,488" size="20,13" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="com.objet.lofteurs/Loft@loft+com.lofteur.nourriture/Nourriture@" source="//@children.2" target="//@children.11" targetEnd="//@children.2/@sourceConnections.1/@children.2" label="//@children.2/@sourceConnections.1/@children.0" sourceEnd="//@children.2/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="129,22" id="com.objet.lofteurs/Loft@loft+com.lofteur.nourriture/Nourriture@|com.lofteur.nourriture/Nourriture#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="loft" location="0,256" id="com.objet.lofteurs/Loft@loft+com.lofteur.nourriture/Nourriture@|com.objet.lofteurs/Loft#loft" multiplicityLabel="//@children.2/@sourceConnections.1/@children.2/@children.1" roleLabel="//@children.2/@sourceConnections.1/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" # loft" location="1053,393" size="33,13" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="1066,420" size="20,13" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="com.objet.lofteurs/ObjetDessinable&lt;-com.lofteur.nourriture/Nourriture" source="//@children.2" target="//@children.5" targetEnd="//@children.2/@sourceConnections.2/@children.1" sourceEnd="//@children.2/@sourceConnections.2/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="116,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="43,94" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="com.objet.lofteurs/Mangeable&lt;-com.lofteur.nourriture/Nourriture" source="//@children.2" target="//@children.3" targetEnd="//@children.2/@sourceConnections.3/@children.1" sourceEnd="//@children.2/@sourceConnections.3/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="17,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="106,94" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.2/@sourceConnections.3 //@children.6/@sourceConnections.2" name="Mangeable" location="420,14" size="125,94" id="com.objet.lofteurs/Mangeable" runTimeClassModel="estMange()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="84,18">
+      <children xsi:type="editmodel:MethodEditModel" name="estMange" id="com.objet.lofteurs/Mangeable#estMange()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0" name="Vorace" location="14,350" size="173,135" id="com.objet.lofteurs.neuneus/Vorace" runTimeClassModel="dessinerObjet(Ljava.awt.Graphics;),Vorace(Lcom.objet.lofteurs.Case;Lcom.objet.lofteurs.Loft;),seDeplacer(),seReproduire()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="106,72">
+      <children xsi:type="editmodel:MethodEditModel" name="Vorace" id="com.objet.lofteurs.neuneus/Vorace#Vorace(Lcom.objet.lofteurs.Case;Lcom.objet.lofteurs.Loft;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="dessinerObjet" id="com.objet.lofteurs.neuneus/Vorace#dessinerObjet(Ljava.awt.Graphics;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="seDeplacer" id="com.objet.lofteurs.neuneus/Vorace#seDeplacer()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="seReproduire" id="com.objet.lofteurs.neuneus/Vorace#seReproduire()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="com.objet.lofteurs.neuneus/Erratique&lt;-com.objet.lofteurs.neuneus/Vorace" source="//@children.4" target="//@children.10" targetEnd="//@children.4/@sourceConnections.0/@children.1" sourceEnd="//@children.4/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="108,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="63,153" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.2/@sourceConnections.2 //@children.6/@sourceConnections.3 //@children.11/@sourceConnections.1" name="ObjetDessinable" location="825,14" size="166,94" id="com.objet.lofteurs/ObjetDessinable" runTimeClassModel="dessinerObjet(Ljava.awt.Graphics;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="106,18">
+      <children xsi:type="editmodel:MethodEditModel" name="dessinerObjet" id="com.objet.lofteurs/ObjetDessinable#dessinerObjet(Ljava.awt.Graphics;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.10/@sourceConnections.0" name="Neuneu" location="300,150" size="173,243" id="com.objet.lofteurs.neuneus/Neuneu" runTimeClassModel="dessinerObjet(Ljava.awt.Graphics;Ljava.awt.Color;),estMort(),mourir(),enchainerAction(),manger(),copuler(),Neuneu(Lcom.objet.lofteurs.Case;Lcom.objet.lofteurs.Loft;),seDeplacer(),seReproduire(),estMange()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="119,180">
+      <children xsi:type="editmodel:MethodEditModel" name="Neuneu" id="com.objet.lofteurs.neuneus/Neuneu#Neuneu(Lcom.objet.lofteurs.Case;Lcom.objet.lofteurs.Loft;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="copuler" id="com.objet.lofteurs.neuneus/Neuneu#copuler()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="dessinerObjet" id="com.objet.lofteurs.neuneus/Neuneu#dessinerObjet(Ljava.awt.Graphics;Ljava.awt.Color;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="enchainerAction" id="com.objet.lofteurs.neuneus/Neuneu#enchainerAction()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="estMange" id="com.objet.lofteurs.neuneus/Neuneu#estMange()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="estMort" id="com.objet.lofteurs.neuneus/Neuneu#estMort()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="manger" id="com.objet.lofteurs.neuneus/Neuneu#manger()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="mourir" id="com.objet.lofteurs.neuneus/Neuneu#mourir()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="seDeplacer" id="com.objet.lofteurs.neuneus/Neuneu#seDeplacer()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="seReproduire" id="com.objet.lofteurs.neuneus/Neuneu#seReproduire()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" id="com.objet.lofteurs/Case@caseCourrante+com.objet.lofteurs.neuneus/Neuneu@" source="//@children.6" target="//@children.0" targetEnd="//@children.6/@sourceConnections.0/@children.2" label="//@children.6/@sourceConnections.0/@children.0" sourceEnd="//@children.6/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="173,155" id="com.objet.lofteurs/Case@caseCourrante+com.objet.lofteurs.neuneus/Neuneu@|com.objet.lofteurs.neuneus/Neuneu#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="caseCourrante" location="1,0" id="com.objet.lofteurs/Case@caseCourrante+com.objet.lofteurs.neuneus/Neuneu@|com.objet.lofteurs/Case#caseCourrante" multiplicityLabel="//@children.6/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.6/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" # caseCourrante" location="863,430" size="95,13" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="780,430" size="20,13" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="com.objet.lofteurs/Loft@loft+com.objet.lofteurs.neuneus/Neuneu@" source="//@children.6" target="//@children.11" targetEnd="//@children.6/@sourceConnections.1/@children.2" label="//@children.6/@sourceConnections.1/@children.0" sourceEnd="//@children.6/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="173,125" id="com.objet.lofteurs/Loft@loft+com.objet.lofteurs.neuneus/Neuneu@|com.objet.lofteurs.neuneus/Neuneu#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="loft" location="0,117" id="com.objet.lofteurs/Loft@loft+com.objet.lofteurs.neuneus/Neuneu@|com.objet.lofteurs/Loft#loft" multiplicityLabel="//@children.6/@sourceConnections.1/@children.2/@children.1" roleLabel="//@children.6/@sourceConnections.1/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" # loft" location="1053,253" size="33,13" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="1066,280" size="20,13" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="com.objet.lofteurs/Mangeable&lt;-com.objet.lofteurs.neuneus/Neuneu" source="//@children.6" target="//@children.3" targetEnd="//@children.6/@sourceConnections.2/@children.1" sourceEnd="//@children.6/@sourceConnections.2/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="146,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="26,94"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="com.objet.lofteurs/ObjetDessinable&lt;-com.objet.lofteurs.neuneus/Neuneu" source="//@children.6" target="//@children.5" targetEnd="//@children.6/@sourceConnections.3/@children.1" sourceEnd="//@children.6/@sourceConnections.3/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="173,86" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,80"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Alcool" location="405,539" size="129,86" id="com.lofteur.nourriture/Alcool" runTimeClassModel="Alcool(ILcom.objet.lofteurs.Case;Lcom.objet.lofteurs.Loft;),dessinerObjet(Ljava.awt.Graphics;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="106,36">
+      <children xsi:type="editmodel:MethodEditModel" name="Alcool" location="647,730" id="com.lofteur.nourriture/Alcool#Alcool(ILcom.objet.lofteurs.Case;Lcom.objet.lofteurs.Loft;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="dessinerObjet" id="com.lofteur.nourriture/Alcool#dessinerObjet(Ljava.awt.Graphics;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="com.lofteur.nourriture/Nourriture&lt;-com.lofteur.nourriture/Alcool" source="//@children.7" target="//@children.2" targetEnd="//@children.7/@sourceConnections.0/@children.1" sourceEnd="//@children.7/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="116,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="12,122" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Lapin" location="195,404" size="173,153" id="com.objet.lofteurs.neuneus/Lapin" runTimeClassModel="Lapin(Lcom.objet.lofteurs.Case;Lcom.objet.lofteurs.Loft;),enchainerAction(),dessinerObjet(Ljava.awt.Graphics;),seDeplacer(),seReproduire()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="119,90">
+      <children xsi:type="editmodel:MethodEditModel" name="Lapin" id="com.objet.lofteurs.neuneus/Lapin#Lapin(Lcom.objet.lofteurs.Case;Lcom.objet.lofteurs.Loft;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="dessinerObjet" id="com.objet.lofteurs.neuneus/Lapin#dessinerObjet(Ljava.awt.Graphics;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="enchainerAction" id="com.objet.lofteurs.neuneus/Lapin#enchainerAction()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="seDeplacer" id="com.objet.lofteurs.neuneus/Lapin#seDeplacer()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="seReproduire" id="com.objet.lofteurs.neuneus/Lapin#seReproduire()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="com.objet.lofteurs.neuneus/Erratique&lt;-com.objet.lofteurs.neuneus/Lapin" source="//@children.8" target="//@children.10" targetEnd="//@children.8/@sourceConnections.0/@children.1" sourceEnd="//@children.8/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="18,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="154,153"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Viande" location="584,570" size="129,86" id="com.lofteur.nourriture/Viande" runTimeClassModel="dessinerObjet(Ljava.awt.Graphics;),Viande(ILcom.objet.lofteurs.Case;Lcom.objet.lofteurs.Loft;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="106,36">
+      <children xsi:type="editmodel:MethodEditModel" name="Viande" id="com.lofteur.nourriture/Viande#Viande(ILcom.objet.lofteurs.Case;Lcom.objet.lofteurs.Loft;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="dessinerObjet" id="com.lofteur.nourriture/Viande#dessinerObjet(Ljava.awt.Graphics;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="com.lofteur.nourriture/Nourriture&lt;-com.lofteur.nourriture/Viande" source="//@children.9" target="//@children.2" targetEnd="//@children.9/@sourceConnections.0/@children.1" sourceEnd="//@children.9/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="26,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="101,122"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.0 //@children.8/@sourceConnections.0" name="Erratique" location="59,150" size="173,153" id="com.objet.lofteurs.neuneus/Erratique" runTimeClassModel="enchainerAction(),dessinerObjet(Ljava.awt.Graphics;),seDeplacer(),seReproduire(),Erratique(Lcom.objet.lofteurs.Case;Lcom.objet.lofteurs.Loft;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="119,90">
+      <children xsi:type="editmodel:MethodEditModel" name="Erratique" id="com.objet.lofteurs.neuneus/Erratique#Erratique(Lcom.objet.lofteurs.Case;Lcom.objet.lofteurs.Loft;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="dessinerObjet" id="com.objet.lofteurs.neuneus/Erratique#dessinerObjet(Ljava.awt.Graphics;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="enchainerAction" location="70,295" id="com.objet.lofteurs.neuneus/Erratique#enchainerAction()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="seDeplacer" id="com.objet.lofteurs.neuneus/Erratique#seDeplacer()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="seReproduire" id="com.objet.lofteurs.neuneus/Erratique#seReproduire()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="com.objet.lofteurs.neuneus/Neuneu&lt;-com.objet.lofteurs.neuneus/Erratique" source="//@children.10" target="//@children.6" targetEnd="//@children.10/@sourceConnections.0/@children.1" sourceEnd="//@children.10/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="173,76" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,76"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.1 //@children.6/@sourceConnections.1" name="Loft" location="1094,158" size="169,279" id="com.objet.lofteurs/Loft" runTimeClassModel="w,removeNeuneu(Lcom.objet.lofteurs.neuneus.Neuneu;),add(Lcom.objet.lofteurs.neuneus.Neuneu;),removeNourriture(Lcom.lofteur.nourriture.Nourriture;),dessinerObjet(Ljava.awt.Graphics;),caseExiste(II),getListeNeuneus(),go(),Loft(IILcom.objet.lofteurs.ZoneGraphique;),remplissageAleatoire(F),getCase(II),h">
+    <children xsi:type="editmodel:CompartmentEditModel" size="48,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="h" id="com.objet.lofteurs/Loft#h"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="w" location="-52,55" id="com.objet.lofteurs/Loft#w"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="146,180">
+      <children xsi:type="editmodel:MethodEditModel" name="Loft" id="com.objet.lofteurs/Loft#Loft(IILcom.objet.lofteurs.ZoneGraphique;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="add" id="com.objet.lofteurs/Loft#add(Lcom.objet.lofteurs.neuneus.Neuneu;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="caseExiste" id="com.objet.lofteurs/Loft#caseExiste(II)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="dessinerObjet" id="com.objet.lofteurs/Loft#dessinerObjet(Ljava.awt.Graphics;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCase" id="com.objet.lofteurs/Loft#getCase(II)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getListeNeuneus" id="com.objet.lofteurs/Loft#getListeNeuneus()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="go" id="com.objet.lofteurs/Loft#go()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeNeuneu" id="com.objet.lofteurs/Loft#removeNeuneu(Lcom.objet.lofteurs.neuneus.Neuneu;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeNourriture" id="com.objet.lofteurs/Loft#removeNourriture(Lcom.lofteur.nourriture.Nourriture;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="remplissageAleatoire" id="com.objet.lofteurs/Loft#remplissageAleatoire(F)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="com.objet.lofteurs/Case@listeCases+com.objet.lofteurs/Loft@" source="//@children.11" target="//@children.0" targetEnd="//@children.11/@sourceConnections.0/@children.2" label="//@children.11/@sourceConnections.0/@children.0" sourceEnd="//@children.11/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,279" id="com.objet.lofteurs/Case@listeCases+com.objet.lofteurs/Loft@|com.objet.lofteurs/Loft#" attachSource="true" roleLabel="//@children.11/@sourceConnections.0/@children.1/@children.0">
+        <children xsi:type="editmodel:LabelEditModel" location="1096,443" size="0,13" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="listeCases" location="149,10" id="com.objet.lofteurs/Case@listeCases+com.objet.lofteurs/Loft@|com.objet.lofteurs/Case#listeCases" multiplicityLabel="//@children.11/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.11/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - listeCases" location="1010,466" size="66,13" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="1010,439" size="5,13" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="com.objet.lofteurs/ObjetDessinable&lt;-com.objet.lofteurs/Loft" source="//@children.11" target="//@children.5" targetEnd="//@children.11/@sourceConnections.1/@children.1" sourceEnd="//@children.11/@sourceConnections.1/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,66" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="137,94"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" level="-1" properties="wireOptions=3;Product=eUML2"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>
