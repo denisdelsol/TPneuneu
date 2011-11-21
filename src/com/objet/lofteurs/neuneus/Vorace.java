@@ -5,7 +5,6 @@ import java.awt.Graphics;
 
 import com.objet.lofteurs.Case;
 import com.objet.lofteurs.Loft;
-import com.objet.lofteurs.Saison1;
 
 public class Vorace extends Erratique {
 
@@ -31,8 +30,7 @@ public class Vorace extends Erratique {
 
 	@Override
 	public void seReproduire() {
-		super.copuler();
-		if (this.energie != Saison1.energieMort) {
+		if (super.copuler()) {
 			this.loft.add(new Vorace(this.caseCourrante, this.loft));
 		}
 	}

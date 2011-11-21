@@ -4,12 +4,13 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 import com.objet.lofteurs.Case;
+import com.objet.lofteurs.Loft;
 import com.objet.lofteurs.Mangeable;
 import com.objet.lofteurs.ObjetDessinable;
 import com.objet.lofteurs.Saison1;
 
 /**
- * Classe abstraite permettant de gérer la nourriture.
+ * Classe abstraite permettant de gï¿½rer la nourriture.
  * @author Denis
  *
  */
@@ -17,6 +18,7 @@ public abstract class Nourriture implements ObjetDessinable, Mangeable {
 
 	protected int quantite;
 	protected Case caseCourrante;
+	protected Loft loft;
 
 	/**
 	 * Obtient la quantite de nourriture
@@ -36,14 +38,32 @@ public abstract class Nourriture implements ObjetDessinable, Mangeable {
 		return caseCourrante;
 	}
 
-	public Nourriture(int quantite, Case caseCourante){
+	public Nourriture(int quantite, Case caseCourante, Loft loft){
 		this.quantite = quantite;
 		this.caseCourrante = caseCourante;
 		this.caseCourrante.addNourriture(this);
+		this.loft=loft;
+	}
+	
+	public int estMange() {
+		final int quantiteMange = (int) (Math.random() * this.quantite);
+		this.quantite = this.quantite - quantiteMange;
+		if(this.quantite == 1){
+			this.suppression();
+		}
+		return quantiteMange;
 	}
 	
 	/**
-	 * Dessine un élément nourriture
+	 * Permet de supprimer la nourriture
+	 */
+	protected void suppression(){
+		this.caseCourrante.removeNourriture(this);
+		this.loft.removeNourriture(this);
+	}
+	
+	/**
+	 * Dessine un ï¿½lï¿½ment nourriture
 	 * 
 	 * @param g
 	 * @param color

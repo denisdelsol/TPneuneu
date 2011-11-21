@@ -58,7 +58,7 @@ public class Case {
 	}
 
 	/**
-	 * Obtient une liste de neuneus présents sur la case.
+	 * Obtient une liste de neuneus prï¿½sents sur la case.
 	 * 
 	 * @return Map<Integer, Neuneu>
 	 */
@@ -82,6 +82,15 @@ public class Case {
 	 */
 	public void addNourriture(Nourriture nourriture) {
 		listeNourriture.add(nourriture);
+	}
+	
+	/**
+	 * Enleve un element de nourriture a la case.
+	 * 
+	 * @param nourriture
+	 */
+	public void removeNourriture(Nourriture nourriture) {
+		listeNourriture.remove(nourriture);
 	}
 
 	/**

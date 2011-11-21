@@ -5,7 +5,6 @@ import java.awt.Graphics;
 
 import com.objet.lofteurs.Case;
 import com.objet.lofteurs.Loft;
-import com.objet.lofteurs.Saison1;
 
 /**
  * Represente un Neuneu de type Erratique (se deplace aleatoirement)
@@ -37,8 +36,7 @@ public class Erratique extends Neuneu {
 
 	@Override
 	public void seReproduire() {
-		super.copuler();
-		if (this.energie != Saison1.energieMort) {
+		if (super.copuler()) {
 			this.loft.add(new Erratique(this.caseCourrante, this.loft));
 		}
 	}
@@ -46,6 +44,16 @@ public class Erratique extends Neuneu {
 	@Override
 	public void dessinerObjet(Graphics g) {
 		super.dessinerObjet(g, Color.blue);
+	}
+
+	@Override
+	public void enchainerAction() {
+		this.seDeplacer();
+		this.manger();
+		this.seReproduire();
+		if (this.estMort()) {
+			this.mourir();
+		}
 	}
 
 }

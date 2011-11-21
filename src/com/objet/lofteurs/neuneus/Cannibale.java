@@ -31,8 +31,7 @@ public class Cannibale extends Vorace {
 
 	@Override
 	public void seReproduire() {
-		super.copuler();
-		if (this.energie != Saison1.energieMort) {
+		if (super.copuler()) {
 			this.loft.add(new Cannibale(this.caseCourrante, this.loft));
 		}
 	}

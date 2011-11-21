@@ -45,9 +45,13 @@ public abstract class Neuneu implements Mangeable, ObjetDessinable {
 		this.caseCourrante.addNeuneu(this);
 		this.loft = loft;
 		this.loft.add(this);
-
 	}
 
+	/**
+	 * Permet d'enchainer seDeplacer(), manger() et seReproduire()
+	 */
+	public abstract void enchainerAction();
+	
 	/**
 	 * Permet au Neuneu de se deplacer dans le loft
 	 * 
@@ -96,18 +100,22 @@ public abstract class Neuneu implements Mangeable, ObjetDessinable {
 	/**
 	 * Permet au Neuneu de copuler, ceci lui fait perdre de l'energie
 	 */
-	public void copuler() {
+	public boolean copuler() {
 		final int nbNeuneu = caseCourrante.getNeuneu().size();
 
-		if (nbNeuneu != 0) {
+		if (nbNeuneu > 1) {
 			if ((this.energie - Saison1.energieReproduction) <= Saison1.energieMort) {
 				this.energie = Saison1.energieMort;
+				return false;
 			}
 
 			else {
 				this.energie = this.energie - Saison1.energieReproduction;
+				return true;
 			}
 		}
+		
+		return false;
 	}
 
 	/**
@@ -118,6 +126,7 @@ public abstract class Neuneu implements Mangeable, ObjetDessinable {
 	public int estMange() {
 		final int quantiteNourriture = (int) (Math.random() * this.energie);
 		this.energie = Saison1.energieMort;
+		this.mourir();
 		return quantiteNourriture;
 	}
 
@@ -208,13 +217,13 @@ public abstract class Neuneu implements Mangeable, ObjetDessinable {
 		final int coordX = this.caseCourrante.getX();
 		final int coordY = this.caseCourrante.getY();
 
-		int newCoordX = coordX - 1 + (int) (Math.random() * 2);
-		int newCoordY = coordY - 1 + (int) (Math.random() * 2);
+		int newCoordX = coordX - 1 + (int) (Math.random() * 3);
+		int newCoordY = coordY - 1 + (int) (Math.random() * 3);
 
 		while ((!this.loft.caseExiste(newCoordX, newCoordY))
 				|| (Math.abs(coordX - newCoordX) + Math.abs(coordY - newCoordY) == 0)) {
-			newCoordX = coordX - 1 + (int) (Math.random() * 2);
-			newCoordY = coordY - 1 + (int) (Math.random() * 2);
+			newCoordX = coordX - 1 + (int) (Math.random() * 3);
+			newCoordY = coordY - 1 + (int) (Math.random() * 3);
 		}
 
 		return this.loft.getCase(newCoordX, newCoordY);
@@ -229,5 +238,13 @@ public abstract class Neuneu implements Mangeable, ObjetDessinable {
 		g.fillOval(this.caseCourrante.getX() * Saison1.tailleCase + 10,
 				this.caseCourrante.getY() * Saison1.tailleCase + 10,
 				Saison1.tailleNeuneu, Saison1.tailleNeuneu);
+	}
+	
+	/**
+	 * Permet au neuneu de mourir
+	 */
+	public void mourir(){
+		this.loft.removeNeuneu(this);
+		this.caseCourrante.removeNeuneu(this);
 	}
 }

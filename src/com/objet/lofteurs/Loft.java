@@ -3,7 +3,7 @@ package com.objet.lofteurs;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
-
+import com.lofteur.nourriture.Nourriture;
 import com.lofteur.nourriture.Viande;
 import com.objet.lofteurs.neuneus.Neuneu;
 
@@ -69,16 +69,14 @@ public class Loft implements ObjetDessinable {
 	public void go() {
 
 		for (int i = 0; i < nombreDeTours; i++) {
-			for (Neuneu neuneu : listeNeuneu) {
-				// TODO
-				neuneu.seDeplacer();
-				zone.repaint();
+				final int indexNeuneu = (int)(Math.random() * (listeNeuneu.size()));
+				listeNeuneu.get(indexNeuneu).enchainerAction();
 				try {
-					Thread.sleep(500);
+					Thread.sleep(1000);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-			}
+				zone.repaint();
 		}
 	}
 
@@ -90,7 +88,7 @@ public class Loft implements ObjetDessinable {
 	public void remplissageAleatoire(float repartition) {
 		for (int nombre = 0; nombre < (int) (repartition * h * w); nombre++) {
 			zone.ajouterObjet(new Viande(10, this.listeCases[(int) (Math
-					.random() * w)][(int) (Math.random() * h)]));
+					.random() * w)][(int) (Math.random() * h)], this));
 		}
 	}
 
@@ -111,7 +109,16 @@ public class Loft implements ObjetDessinable {
 	 */
 	public void removeNeuneu(Neuneu neuneu) {
 		listeNeuneu.remove(neuneu);
-		zone.liste.remove(neuneu);
+		zone.enleverObjet(neuneu);
+	}
+	
+	/**
+	 * Supprime une nourriture de la liste des objets dessinables
+	 * 
+	 * @param neuneu
+	 */
+	public void removeNourriture(Nourriture nourriture) {
+		zone.enleverObjet(nourriture);
 	}
 
 	@Override
