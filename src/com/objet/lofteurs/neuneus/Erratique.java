@@ -33,11 +33,12 @@ public class Erratique extends Neuneu {
 		this.caseCourrante.addNeuneu(this);
 		return;
 	}
-
+	
+	@SuppressWarnings("unused")
 	@Override
 	public void seReproduire() {
 		if (super.copuler()) {
-			this.loft.add(new Erratique(this.caseCourrante, this.loft));
+			Erratique erratique = new Erratique(this.caseCourrante, this.loft);
 		}
 	}
 

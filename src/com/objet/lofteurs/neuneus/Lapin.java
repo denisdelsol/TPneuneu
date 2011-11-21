@@ -27,11 +27,12 @@ public class Lapin extends Erratique {
 		this.caseCourrante.addNeuneu(this);
 		return;
 	}
-
+	
+	@SuppressWarnings("unused")
 	@Override
 	public void seReproduire() {
 		if (super.copuler()) {
-			this.loft.add(new Lapin(this.caseCourrante, this.loft));
+			Lapin lapin = new Lapin(this.caseCourrante, this.loft);
 		}
 	}
 

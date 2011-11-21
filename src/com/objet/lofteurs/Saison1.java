@@ -2,6 +2,7 @@ package com.objet.lofteurs;
 
 import com.objet.lofteurs.neuneus.Cannibale;
 import com.objet.lofteurs.neuneus.Erratique;
+import com.objet.lofteurs.neuneus.Lapin;
 import com.objet.lofteurs.neuneus.Neuneu;
 import com.objet.lofteurs.neuneus.Vorace;
 
@@ -12,10 +13,10 @@ import com.objet.lofteurs.neuneus.Vorace;
  */
 public class Saison1 {
 
-	public static final int nombreLofteurs = 1;
-	public static final float proportionErratique = 0.f;
-	public static final float proportionVorace = 1.f;
-	public static final float proportionCannibale = 0.f;
+	public static final int nombreLofteurs = 10;
+	public static final float proportionErratique = 0.3f;
+	public static final float proportionVorace = .5f;
+	public static final float proportionCannibale = 0.2f;
 	public static final int energieDefault = 100;
 	public static final int energieReproduction = 25;
 	public static final int energieMort = 0;
@@ -37,7 +38,7 @@ public class Saison1 {
 		Loft loft = new Loft(largeurLoft, longueurLoft, zone);
 		loft.remplissageAleatoire(0.1f);
 		zone.ajouterObjet(loft);
-
+		
 		for (int i = 0; i < nombreLofteurs; i++) {
 			double x = Math.random();
 			if (x < proportionVorace) {

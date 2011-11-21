@@ -28,10 +28,11 @@ public class Vorace extends Erratique {
 		return;
 	}
 
+	@SuppressWarnings("unused")
 	@Override
 	public void seReproduire() {
 		if (super.copuler()) {
-			this.loft.add(new Vorace(this.caseCourrante, this.loft));
+			Vorace vorace = new Vorace(this.caseCourrante, this.loft);
 		}
 	}
 

@@ -20,7 +20,7 @@ public class Loft implements ObjetDessinable {
 	private final ZoneGraphique zone;
 	private Case[][] listeCases;
 	private ArrayList<Neuneu> listeNeuneu;
-	private final int nombreDeTours = 100;
+//	private final int nombreDeTours = 100;
 
 	/**
 	 * Cree un loft avec le nombre de cases necessaires.
@@ -68,16 +68,18 @@ public class Loft implements ObjetDessinable {
 	 */
 	public void go() {
 
-		for (int i = 0; i < nombreDeTours; i++) {
+		while(this.listeNeuneu.size() > 1) {
 				final int indexNeuneu = (int)(Math.random() * (listeNeuneu.size()));
 				listeNeuneu.get(indexNeuneu).enchainerAction();
 				try {
-					Thread.sleep(1000);
+					Thread.sleep(500);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 				zone.repaint();
 		}
+		
+		zone.dispose();
 	}
 
 	/**

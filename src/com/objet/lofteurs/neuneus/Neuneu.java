@@ -51,7 +51,7 @@ public abstract class Neuneu implements Mangeable, ObjetDessinable {
 	 * Permet d'enchainer seDeplacer(), manger() et seReproduire()
 	 */
 	public abstract void enchainerAction();
-	
+
 	/**
 	 * Permet au Neuneu de se deplacer dans le loft
 	 * 
@@ -84,7 +84,7 @@ public abstract class Neuneu implements Mangeable, ObjetDessinable {
 		final int nbNourriture = caseCourrante.getNourriture().size();
 
 		if (nbNourriture != 0) {
-			final int indexNourriture = (int) (Math.random() * (nbNourriture - 1));
+			final int indexNourriture = (int) (Math.random() * (nbNourriture));
 			final Nourriture nourriture = caseCourrante.getNourriture().get(
 					indexNourriture);
 			final int quantiteEnergie = nourriture.estMange();
@@ -107,14 +107,11 @@ public abstract class Neuneu implements Mangeable, ObjetDessinable {
 			if ((this.energie - Saison1.energieReproduction) <= Saison1.energieMort) {
 				this.energie = Saison1.energieMort;
 				return false;
-			}
-
-			else {
+			} else {
 				this.energie = this.energie - Saison1.energieReproduction;
 				return true;
 			}
 		}
-		
 		return false;
 	}
 
@@ -239,11 +236,11 @@ public abstract class Neuneu implements Mangeable, ObjetDessinable {
 				this.caseCourrante.getY() * Saison1.tailleCase + 10,
 				Saison1.tailleNeuneu, Saison1.tailleNeuneu);
 	}
-	
+
 	/**
 	 * Permet au neuneu de mourir
 	 */
-	public void mourir(){
+	public void mourir() {
 		this.loft.removeNeuneu(this);
 		this.caseCourrante.removeNeuneu(this);
 	}
