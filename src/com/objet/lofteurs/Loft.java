@@ -1,5 +1,6 @@
 package com.objet.lofteurs;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
 
@@ -19,6 +20,7 @@ public class Loft implements ObjetDessinable {
 	private final ZoneGraphique zone;
 	private Case[][] listeCases;
 	private ArrayList<Neuneu> listeNeuneu;
+	private final int nombreDeTours = 5;
 
 	/**
 	 * Cree un loft avec le nombre de cases necessaires.
@@ -65,7 +67,21 @@ public class Loft implements ObjetDessinable {
 	 * Lance l'emission !
 	 */
 	public void go() {
-		// TODO
+
+		for (int i = 0; i < nombreDeTours; i++) {
+			for (Neuneu neuneu : listeNeuneu) {
+				// TODO déroulement de la recherche de nourriture (ou autre...)
+				// et deplacement du neuneu
+				// System.out.println(neuneu.getClass().toString());
+				neuneu.seDeplacer();
+			}
+			zone.repaint();
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	/**
@@ -74,13 +90,14 @@ public class Loft implements ObjetDessinable {
 	 * @param nombre
 	 */
 	public void remplissageAleatoire(float repartition) {
-		for (int nombre = 0; nombre < (int) (repartition * 100); nombre++) {
-			zone.ajouterObjet(new Viande(10, this.listeCases[(int)(Math.random()*w)][(int)(Math.random()*h)]));
+		for (int nombre = 0; nombre < (int) (repartition * h * w); nombre++) {
+			zone.ajouterObjet(new Viande(10, this.listeCases[(int) (Math
+					.random() * w)][(int) (Math.random() * h)]));
 		}
 	}
 
 	/**
-	 * Ajoute un neuneu ï¿½ la liste des neuneus du loft.
+	 * Ajoute un neuneu a la liste des neuneus du loft.
 	 * 
 	 * @param neuneu
 	 */
@@ -101,6 +118,7 @@ public class Loft implements ObjetDessinable {
 	@Override
 	public void dessinerObjet(Graphics g) {
 		// Le loft est délimite par un rectangle
+		g.setColor(Color.black);
 		g.drawRect(10, 10, w * 10, h * 10);
 	}
 

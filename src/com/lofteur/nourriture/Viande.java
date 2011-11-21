@@ -24,8 +24,8 @@ public class Viande extends Nourriture {
 
 	@Override
 	public void dessinerObjet(Graphics g) {
-		g.fillRect(this.caseCourrante.getX()*10+10, this.caseCourrante.getY()*10+10, 10, 10);
 		g.setColor(Color.red);
+		g.fillRect(this.caseCourrante.getX()*10+10, this.caseCourrante.getY()*10+10, 5, 5);
 	}
 	
 }

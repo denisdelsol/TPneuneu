@@ -11,7 +11,7 @@ import com.objet.lofteurs.neuneus.Vorace;
  */
 public class Saison1 {
 
-	public static final int nombreLofteurs = 4;
+	public static final int nombreLofteurs = 10;
 	public static final float proportionErratique = .70f;
 	public static final float proportionVorace = .25f;
 	public static final float proportionCannibale = .5f;

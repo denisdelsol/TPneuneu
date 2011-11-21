@@ -48,8 +48,8 @@ public class Erratique extends Neuneu {
 
 	@Override
 	public void dessinerObjet(Graphics g) {
-		g.fillOval(this.caseCourrante.getX()*10+10, this.caseCourrante.getY()*10+10, 10, 10);
 		g.setColor(Color.blue);
+		g.fillOval(this.caseCourrante.getX()*10+10, this.caseCourrante.getY()*10+10, 10, 10);
 	}
 
 }
