@@ -1,5 +1,6 @@
 package com.objet.lofteurs;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
 
@@ -77,8 +78,8 @@ public class Loft implements ObjetDessinable {
 
 	@Override
 	public void dessinerObjet(Graphics g) {
-		// TODO Auto-generated method stub
-
+		g.setColor(Color.BLACK);
+		g.drawRect(1, 1, zone.getWidth()-2, zone.getWidth()-2);
 	}
 
 	/**
