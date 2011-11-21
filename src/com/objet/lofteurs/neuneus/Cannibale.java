@@ -1,5 +1,8 @@
 package com.objet.lofteurs.neuneus;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
 import com.objet.lofteurs.Case;
 import com.objet.lofteurs.Loft;
 import com.objet.lofteurs.Saison1;
@@ -50,6 +53,12 @@ public class Cannibale extends Vorace {
 				}
 			}
 		}
+	}
+	
+	@Override
+	public void dessinerObjet(Graphics g) {
+		g.setColor(Color.red);
+		g.fillOval(this.caseCourrante.getX()*10+10, this.caseCourrante.getY()*10+10, 10, 10);
 	}
 
 }

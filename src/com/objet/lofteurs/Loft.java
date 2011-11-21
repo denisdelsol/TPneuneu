@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
 
+import com.lofteur.nourriture.Viande;
 import com.objet.lofteurs.neuneus.Neuneu;
 
 /**
@@ -19,6 +20,7 @@ public class Loft implements ObjetDessinable {
 	private final ZoneGraphique zone;
 	private Case[][] listeCases;
 	private ArrayList<Neuneu> listeNeuneu;
+	private final int nombreDeTours = 5;
 
 	/**
 	 * Cree un loft avec le nombre de cases necessaires.
@@ -34,6 +36,7 @@ public class Loft implements ObjetDessinable {
 		this.h = h;
 		this.zone = zone;
 		this.listeCases = new Case[w][h];
+		listeNeuneu = new ArrayList<Neuneu>();
 
 		for (int i = 0; i < w; i++) {
 			for (int j = 0; j < h; j++) {
@@ -43,10 +46,42 @@ public class Loft implements ObjetDessinable {
 	}
 
 	/**
+	 * Obtient w.
+	 * 
+	 * @return
+	 */
+	public int getW() {
+		return w;
+	}
+
+	/**
+	 * Obtient h.
+	 * 
+	 * @return
+	 */
+	public int getH() {
+		return h;
+	}
+
+	/**
 	 * Lance l'emission !
 	 */
 	public void go() {
-		// TODO
+
+		for (int i = 0; i < nombreDeTours; i++) {
+			for (Neuneu neuneu : listeNeuneu) {
+				// TODO d�roulement de la recherche de nourriture (ou autre...)
+				// et deplacement du neuneu
+				// System.out.println(neuneu.getClass().toString());
+				neuneu.seDeplacer();
+			}
+			zone.repaint();
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	/**
@@ -54,17 +89,21 @@ public class Loft implements ObjetDessinable {
 	 * 
 	 * @param nombre
 	 */
-	public void remplissageAleatoire(float nombre) {
-		// TODO
+	public void remplissageAleatoire(float repartition) {
+		for (int nombre = 0; nombre < (int) (repartition * h * w); nombre++) {
+			zone.ajouterObjet(new Viande(10, this.listeCases[(int) (Math
+					.random() * w)][(int) (Math.random() * h)]));
+		}
 	}
 
 	/**
-	 * Ajoute un neuneu � la liste des neuneus du loft.
+	 * Ajoute un neuneu a la liste des neuneus du loft.
 	 * 
 	 * @param neuneu
 	 */
 	public void add(Neuneu neuneu) {
 		listeNeuneu.add(neuneu);
+		zone.ajouterObjet(neuneu);
 	}
 
 	/**
@@ -78,8 +117,18 @@ public class Loft implements ObjetDessinable {
 
 	@Override
 	public void dessinerObjet(Graphics g) {
-		g.setColor(Color.BLACK);
-		g.drawRect(1, 1, zone.getWidth()-2, zone.getWidth()-2);
+		// Le loft est d�limite par un rectangle
+		g.setColor(Color.black);
+		g.drawRect(10, 10, w * 10, h * 10);
+	}
+
+	/**
+	 * Renvoie la liste des neuneus du loft
+	 * 
+	 * @return ArrayList<Neuneu>
+	 */
+	public ArrayList<Neuneu> getListeNeuneus() {
+		return listeNeuneu;
 	}
 
 	/**

@@ -4,6 +4,7 @@ import com.lofteur.nourriture.Nourriture;
 import com.objet.lofteurs.Case;
 import com.objet.lofteurs.Loft;
 import com.objet.lofteurs.Mangeable;
+import com.objet.lofteurs.ObjetDessinable;
 import com.objet.lofteurs.Saison1;
 
 /**
@@ -12,7 +13,7 @@ import com.objet.lofteurs.Saison1;
  * @author bastien
  * 
  */
-public abstract class Neuneu implements Mangeable {
+public abstract class Neuneu implements Mangeable, ObjetDessinable {
 	/**
 	 * Represnete l'energie du Neuneu
 	 */
