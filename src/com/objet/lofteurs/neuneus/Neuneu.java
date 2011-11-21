@@ -132,8 +132,9 @@ public abstract class Neuneu implements Mangeable, ObjetDessinable {
 		while (!neuneuTrouve) {
 			for (int x = -i; x <= i; x++) {
 				for (int y = -i; y <= i; y++) {
-					if (this.loft.caseExiste(x, y)) {
-						if (!this.loft.getCase(x, y).getNeuneu().isEmpty()) {
+					if (this.loft.caseExiste(coordX + x, coordY + y)) {
+						final Case caseBuffer = this.loft.getCase(coordX + x, coordY + y);
+						if (!(caseBuffer.getNeuneu().size()==0)) {
 							return this.loft.getCase(x, y);
 						}
 					}
@@ -163,8 +164,9 @@ public abstract class Neuneu implements Mangeable, ObjetDessinable {
 		while (!nourritureTrouve) {
 			for (int x = -i; x <= i; x++) {
 				for (int y = -i; y <= i; y++) {
-					if (this.loft.caseExiste(x, y)) {
-						if (!this.loft.getCase(x, y).getNourriture().isEmpty()) {
+					if (this.loft.caseExiste(coordX + x, coordY + y)) {
+						final Case caseBuffer = this.loft.getCase(coordX + x, coordY + y);
+						if (!(caseBuffer.getNourriture().size()==0)) {
 							return this.loft.getCase(x, y);
 						}
 					}
